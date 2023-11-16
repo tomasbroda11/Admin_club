@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -144,10 +145,11 @@ namespace Datos
             List<Entrenamiento> entrenamientos= new List<Entrenamiento>();
 
             SqlConnection connection = Conexion.openConection();
-            string query = "SELECT  idEntrenamiento, horaDesde, horaHasta, dia, idProfesor, idInstalacion FROM entrenamientos WHERE idProfesor = '21345532';";
+            string query = "SELECT  idEntrenamiento, horaDesde, horaHasta, dia, idProfesor, idInstalacion FROM entrenamientos WHERE idProfesor = @idProfesor;";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
+                command.Parameters.AddWithValue("@idProfesor", dni);
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())

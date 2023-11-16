@@ -4,6 +4,8 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Net;
 using System.Reflection.PortableExecutable;
+using System.Text.RegularExpressions;
+
 
 namespace Datos
 {
@@ -135,11 +137,9 @@ namespace Datos
         public Persona getPersonaByDNI(string dni)
         {
             Persona personaEncontrada = null;
-            //Abrir conexion
 
             SqlConnection connection = Conexion.openConection();
 
-            // Consulta SQL para buscar la persona por DNI y contraseña
             string query = "SELECT * FROM personas p WHERE p.dni=@DNI";
 
             using (SqlCommand command = new SqlCommand(query, connection))
@@ -202,7 +202,6 @@ namespace Datos
                 {
                     connection = Conexion.openConection();
 
-                    // Consulta SQL para buscar la persona por DNI y contraseña
                     string query = "INSERT INTO personas VALUES (@dni, @nombre, @apellido, @mail, @password, @rol)";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -240,7 +239,7 @@ namespace Datos
              
                     connection = Conexion.openConection();
 
-                    string query = "UPDATE personas SET nombre = @nombre, apellido = @apellido, e1mail = @mail WHERE dni = @dni;";
+                    string query = "UPDATE personas SET nombre = @nombre, apellido = @apellido, email = @mail WHERE dni = @dni;";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -266,7 +265,13 @@ namespace Datos
                 }
             }
         }
+        public  bool EsMailValido(string email)
+        {
+            string expresionRegular = @"^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$";
+            Regex regex = new Regex(expresionRegular, RegexOptions.IgnoreCase);
 
+            return regex.IsMatch(email);
+        }
         public void deletePersona(string dni)
         {
             using (SqlConnection connection = Conexion.openConection())
@@ -326,7 +331,7 @@ namespace Datos
                 {
                     connection = Conexion.openConection();
 
-                    // Consulta SQL para buscar la persona por DNI y contraseña
+                    
                     string query = "INSERT INTO personas VALUES (@dni, @nombre, @apellido, @mail, @password, @rol, @idActividad)";
 
                     using (SqlCommand command = new SqlCommand(query, connection))

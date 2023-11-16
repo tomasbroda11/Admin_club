@@ -32,7 +32,6 @@
             btnProfesores = new Button();
             btnSocios = new Button();
             btnReservas = new Button();
-            button3 = new Button();
             btnInstalaciones = new Button();
             btn_menu_salir = new Button();
             btnHistorico = new Button();
@@ -42,7 +41,7 @@
             // 
             lblMenu.AutoSize = true;
             lblMenu.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMenu.Location = new Point(225, 12);
+            lblMenu.Location = new Point(207, 9);
             lblMenu.Name = "lblMenu";
             lblMenu.Size = new Size(397, 46);
             lblMenu.TabIndex = 1;
@@ -50,7 +49,7 @@
             // 
             // btnProfesores
             // 
-            btnProfesores.Location = new Point(303, 228);
+            btnProfesores.Location = new Point(303, 255);
             btnProfesores.Margin = new Padding(3, 4, 3, 4);
             btnProfesores.Name = "btnProfesores";
             btnProfesores.Size = new Size(184, 44);
@@ -61,7 +60,7 @@
             // 
             // btnSocios
             // 
-            btnSocios.Location = new Point(303, 176);
+            btnSocios.Location = new Point(303, 203);
             btnSocios.Margin = new Padding(3, 4, 3, 4);
             btnSocios.Name = "btnSocios";
             btnSocios.Size = new Size(184, 44);
@@ -73,7 +72,7 @@
             // btnReservas
             // 
             btnReservas.BackColor = Color.FromArgb(192, 192, 255);
-            btnReservas.Location = new Point(303, 124);
+            btnReservas.Location = new Point(303, 151);
             btnReservas.Margin = new Padding(3, 4, 3, 4);
             btnReservas.Name = "btnReservas";
             btnReservas.Size = new Size(184, 44);
@@ -82,19 +81,9 @@
             btnReservas.UseVisualStyleBackColor = false;
             btnReservas.Click += btnReservas_Click;
             // 
-            // button3
-            // 
-            button3.Location = new Point(303, 280);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(184, 44);
-            button3.TabIndex = 6;
-            button3.Text = "Actividades";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // btnInstalaciones
             // 
-            btnInstalaciones.Location = new Point(303, 332);
+            btnInstalaciones.Location = new Point(303, 307);
             btnInstalaciones.Margin = new Padding(3, 4, 3, 4);
             btnInstalaciones.Name = "btnInstalaciones";
             btnInstalaciones.Size = new Size(184, 44);
@@ -118,7 +107,7 @@
             // btnHistorico
             // 
             btnHistorico.BackColor = Color.FromArgb(192, 255, 255);
-            btnHistorico.Location = new Point(303, 72);
+            btnHistorico.Location = new Point(303, 99);
             btnHistorico.Margin = new Padding(3, 4, 3, 4);
             btnHistorico.Name = "btnHistorico";
             btnHistorico.Size = new Size(184, 44);
@@ -135,7 +124,6 @@
             Controls.Add(btnHistorico);
             Controls.Add(btn_menu_salir);
             Controls.Add(btnInstalaciones);
-            Controls.Add(button3);
             Controls.Add(btnReservas);
             Controls.Add(btnSocios);
             Controls.Add(btnProfesores);
@@ -153,7 +141,6 @@
         private Button btnProfesores;
         private Button btnSocios;
         private Button btnReservas;
-        private Button button3;
         private Button btnInstalaciones;
         private Button btn_menu_salir;
         private Button btnHistorico;

@@ -119,9 +119,8 @@ namespace Datos
 
         public Instalacion obtenerInstalacionXId(int id)
         {
-
             SqlConnection connection = Conexion.openConection();
-            string query = "select ins.descripcion as 'descIns', ins.idActividad, act.descripcion from instalaciones ins left join actividades act on ins.idActividad = act.idActividad where ins.idInstalacion = @idIns;";
+            string query = "select ins.descripcion as 'descIns', ins.activo, ins.idActividad, act.descripcion from instalaciones ins left join actividades act on ins.idActividad = act.idActividad where ins.idInstalacion = @idIns;";
 
             Instalacion ins = null;
             using (SqlCommand command = new SqlCommand(query, connection))
@@ -131,18 +130,18 @@ namespace Datos
                 {
                     if (reader.Read())
                     {
-                        ins = new Instalacion(
-
-                            id,
-                            reader["descIns"].ToString(),
-                            0,
-                            new Actividad
+                        ins = new Instalacion
                             (
-                                int.Parse(reader["idActividad"].ToString()),
-                                reader["descripcion"].ToString(),
-                                0
-                            )
-                        );
+                                id,
+                                reader["descIns"].ToString(),
+                                reader.GetBoolean(reader.GetOrdinal("activo")) ? 1 : 0,
+                                new Actividad
+                                (
+                                    int.Parse(reader["idActividad"].ToString()),
+                                    reader["descripcion"].ToString(),
+                                    0
+                                )
+                            );
 
                     }
                 }

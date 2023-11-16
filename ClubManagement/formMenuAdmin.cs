@@ -36,11 +36,6 @@ namespace ClubManagement
             this.Close();
         }
 
-        private void formMenuAdmin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnProfesores_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -61,6 +56,7 @@ namespace ClubManagement
         {
             ImprimirReservasDelDia();
         }
+
         private void ImprimirReservasDelDia()
         {
 
@@ -103,7 +99,7 @@ namespace ClubManagement
 
         private void btnHistorico_Click(object sender, EventArgs e)
         {
-            this.Hide();    
+            this.Hide();
             formPresentacionReservas formPres = new formPresentacionReservas();
             formPres.ShowDialog();
             this.Close();

@@ -24,6 +24,7 @@ namespace ClubManagement
             this.Hide();
             formLogin formIngreso = new formLogin();
             formIngreso.ShowDialog();
+            this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -31,6 +32,7 @@ namespace ClubManagement
             this.Hide();
             formLogin formIngreso = new formLogin();
             formIngreso.ShowDialog();
+            this.Close();
         }
 
         private void txtDNI_Leave(object sender, EventArgs e)
@@ -199,6 +201,6 @@ namespace ClubManagement
             }
         }
 
-        
+
     }
 }

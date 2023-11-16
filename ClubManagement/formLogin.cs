@@ -19,28 +19,25 @@ namespace ClubManagement
         {
             if (this.txtDNI.Text.Length == 0 || this.txtPass.Text.Length == 0)
             {
-                this.lblValidar.Visible = true;
-                this.lblValidar.ForeColor = Color.Red;
-                this.lblValidar.Text = "Complete todos los campos";
+                MessageBox.Show("Complete todos los campos.");
             }
             else
             {
-                //this.lblValidar.Visible = false;
                 ABMpersonas pers = new ABMpersonas();
                 Persona p = pers.validarInicio(this.txtDNI.Text, this.txtPass.Text);
                 if (p != null)
                 {
-                    System.Diagnostics.Debug.WriteLine("ROL: "+ p.getRol().ToString() == "admin");
-                    System.Diagnostics.Debug.WriteLine("COMPARE TO: "+ p.getRol().CompareTo("admin"));
+                    //System.Diagnostics.Debug.WriteLine("ROL: " + p.getRol().ToString() == "admin");
+                    //System.Diagnostics.Debug.WriteLine("COMPARE TO: " + p.getRol().CompareTo("admin"));
                     if (p.getRol().Trim().ToLower() == "admin")
                     {
                         this.Hide();
-                        formMenuAdmin formMenuAdm= new formMenuAdmin();
+                        formMenuAdmin formMenuAdm = new formMenuAdmin();
                         formMenuAdm.ShowDialog();
                     }
                     else
                     {
-                        if(p.getRol().Trim().ToLower() == "user")
+                        if (p.getRol().Trim().ToLower() == "user")
                         {
                             this.Hide();
                             formMenu formMenup = new formMenu(p);
@@ -56,11 +53,9 @@ namespace ClubManagement
                 }
                 else
                 {
-                    this.lblValidar.Visible = true;
-                    this.lblValidar.ForeColor = Color.Red;
-                    this.lblValidar.Text = "Usuario y/o contraseña incorrectos";
+                    MessageBox.Show("Usuario y/o Contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-
             }
         }
 

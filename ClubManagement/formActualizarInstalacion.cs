@@ -40,13 +40,14 @@ namespace ClubManagement
             cbActivo.SelectedItem = instalacion.getActivo().ToString();
             List<string> descripcionesActividades = actividades.Select(actividad => actividad.getDescripcion()).ToList();
             cbActividades.Items.AddRange(descripcionesActividades.ToArray());
+            cbActividades.SelectedItem = instalacion.Actividad.getDescripcion();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (txtDescripcion.Text.Length == 0 || cbActividades.SelectedItem.ToString().Length == 0)
             {
-                MessageBox.Show("Complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error   );
+                MessageBox.Show("Complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

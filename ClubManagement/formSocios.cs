@@ -55,19 +55,19 @@ namespace ClubManagement
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if(txtDni.Text.Length == 0)
+            if (txtDni.Text.Length == 0)
             {
                 MessageBox.Show("Ingrese un DNI.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
             DialogResult result = MessageBox.Show("¿Quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 ABMpersonas abmPersonas = new ABMpersonas();
                 int personaExiste = abmPersonas.buscaPersona(int.Parse(txtDni.Text));
-                
+
                 if (personaExiste == 2)
                 {
                     abmPersonas.delete(txtDni.Text);
@@ -77,7 +77,7 @@ namespace ClubManagement
                     formSoci.Show();
                     this.Close();
                 }
-                
+
                 else MessageBox.Show("No existe el dni ingresado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -92,7 +92,7 @@ namespace ClubManagement
 
             ABMpersonas abmPersonas = new ABMpersonas();
             Persona personaExiste = abmPersonas.buscaPersonaXDni(txtDni.Text.ToString());
-            
+
             if (personaExiste != null)
             {
                 this.Hide();

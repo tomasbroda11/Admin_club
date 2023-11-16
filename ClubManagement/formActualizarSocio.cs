@@ -43,33 +43,38 @@ namespace ClubManagement
                 this.txtMail.Text.Length == 0))
             {
                 ABMpersonas abmPers = new ABMpersonas();
-                Persona pers = new Persona(
-                    this.persona.getDni(),
-                    txtNombre.Text,
-                    txtApellido.Text,
-                    txtMail.Text,
-                    "",
-                    ""
-                    );
-                abmPers.update(pers);
-                if(this.persona.getRol() == "user")
+                bool esValido = abmPers.validarMail(txtMail.Text.ToString());
+                if (esValido)
                 {
-                    MessageBox.Show("Socio actualizado con exito!");
-                    this.Hide();
-                    formSocios formSoci = new formSocios();
-                    formSoci.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Modificacion exitosa!");
-                    Profesor p = (Profesor)this.persona;
-                    this.Hide();
-                    formMenuProfe formProf = new formMenuProfe(p);
-                    formProf.Show();
-                    this.Close();
 
-                }
+                    Persona pers = new Persona(
+                        this.persona.getDni(),
+                        txtNombre.Text,
+                        txtApellido.Text,
+                        txtMail.Text,
+                        "",
+                        ""
+                        );
+                    abmPers.update(pers);
+                    if(this.persona.getRol() == "user")
+                    {
+                        MessageBox.Show("Socio actualizado con exito!");
+                        this.Hide();
+                        formSocios formSoci = new formSocios();
+                        formSoci.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Modificacion exitosa!");
+                        Profesor p = (Profesor)this.persona;
+                        this.Hide();
+                        formMenuProfe formProf = new formMenuProfe(p);
+                        formProf.Show();
+                        this.Close();
+
+                    }
+                } else MessageBox.Show("Formato de mail incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else

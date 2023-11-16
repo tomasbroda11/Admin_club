@@ -43,7 +43,7 @@ namespace Negocio
 
         public void delete(string dni)
         {
-            dp.deletePersona(dni);
+            dp.deletePersonaLogica(dni);
         }
         public List<PersonaCuota> obtenerSociosCuotas()
         {

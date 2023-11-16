@@ -285,6 +285,38 @@ namespace Datos
                 }
             }
         }
+        public void deletePersonaLogica(string dni)
+        {
+            using (SqlConnection connection = Conexion.openConection())
+            {
+               
+                SqlTransaction transaction = connection.BeginTransaction();
+
+                try
+                {
+                    string deleteReservasQuery = "DELETE FROM reservas WHERE dni = @Dni";
+                    using (SqlCommand deleteReservasCommand = new SqlCommand(deleteReservasQuery, connection, transaction))
+                    {
+                        deleteReservasCommand.Parameters.AddWithValue("@Dni", dni);
+                        deleteReservasCommand.ExecuteNonQuery();
+                    }
+
+                    string deletePersonaQuery = "DELETE FROM personas WHERE dni = @Dni";
+                    using (SqlCommand deletePersonaCommand = new SqlCommand(deletePersonaQuery, connection, transaction))
+                    {
+                        deletePersonaCommand.Parameters.AddWithValue("@Dni", dni);
+                        deletePersonaCommand.ExecuteNonQuery();
+                    }
+
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    throw new Exception("Error al eliminar al socio: " + ex.Message);
+                }
+            }
+        }
         public List<PersonaCuota> ObtenerSociosCuotas()
         {
             List<PersonaCuota> personas = new List<PersonaCuota>();

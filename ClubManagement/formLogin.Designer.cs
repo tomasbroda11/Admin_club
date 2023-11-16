@@ -37,52 +37,51 @@
             txtPass = new TextBox();
             lnkRegistro = new LinkLabel();
             lblRegistro = new Label();
-            lblValidar = new Label();
             lnkOlvidaPass = new LinkLabel();
             SuspendLayout();
             // 
             // btnAceptar
             // 
+            btnAceptar.BackColor = Color.FromArgb(192, 192, 255);
             btnAceptar.Cursor = Cursors.Hand;
-            btnAceptar.Location = new Point(389, 291);
-            btnAceptar.Margin = new Padding(3, 4, 3, 4);
+            btnAceptar.Location = new Point(251, 201);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(110, 31);
+            btnAceptar.Size = new Size(96, 30);
             btnAceptar.TabIndex = 0;
-            btnAceptar.Text = "Aceptar";
-            btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Text = "Iniciar Sesión";
+            btnAceptar.UseVisualStyleBackColor = false;
             btnAceptar.Click += btnAceptar_Click;
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.FromArgb(255, 192, 192);
             btnCancelar.Cursor = Cursors.Hand;
-            btnCancelar.Location = new Point(162, 291);
-            btnCancelar.Margin = new Padding(3, 4, 3, 4);
+            btnCancelar.Location = new Point(107, 201);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(111, 31);
+            btnCancelar.Size = new Size(97, 30);
             btnCancelar.TabIndex = 1;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Text = "Salir";
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitle.Location = new Point(192, 24);
+            lblTitle.Location = new Point(89, 9);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(302, 60);
+            lblTitle.Size = new Size(277, 47);
             lblTitle.TabIndex = 2;
-            lblTitle.Text = "Iniciar Sesión";
+            lblTitle.Text = "Inicio de Sesión";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblDNI
             // 
             lblDNI.AutoSize = true;
             lblDNI.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDNI.Location = new Point(181, 124);
+            lblDNI.Location = new Point(69, 99);
             lblDNI.Name = "lblDNI";
-            lblDNI.Size = new Size(37, 20);
+            lblDNI.Size = new Size(29, 15);
             lblDNI.TabIndex = 3;
             lblDNI.Text = "DNI";
             // 
@@ -90,38 +89,36 @@
             // 
             lblPass.AutoSize = true;
             lblPass.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPass.Location = new Point(135, 183);
+            lblPass.Location = new Point(29, 143);
             lblPass.Name = "lblPass";
-            lblPass.Size = new Size(88, 20);
+            lblPass.Size = new Size(69, 15);
             lblPass.TabIndex = 4;
             lblPass.Text = "Contraseña";
             // 
             // txtDNI
             // 
             txtDNI.Cursor = Cursors.IBeam;
-            txtDNI.Location = new Point(224, 120);
-            txtDNI.Margin = new Padding(3, 4, 3, 4);
+            txtDNI.Location = new Point(107, 96);
             txtDNI.Name = "txtDNI";
-            txtDNI.Size = new Size(274, 27);
+            txtDNI.Size = new Size(240, 23);
             txtDNI.TabIndex = 6;
             // 
             // txtPass
             // 
             txtPass.Cursor = Cursors.IBeam;
-            txtPass.Location = new Point(224, 179);
-            txtPass.Margin = new Padding(3, 4, 3, 4);
+            txtPass.Location = new Point(107, 140);
             txtPass.Name = "txtPass";
             txtPass.PasswordChar = '*';
-            txtPass.Size = new Size(274, 27);
+            txtPass.Size = new Size(240, 23);
             txtPass.TabIndex = 7;
             // 
             // lnkRegistro
             // 
             lnkRegistro.AutoSize = true;
             lnkRegistro.Cursor = Cursors.Hand;
-            lnkRegistro.Location = new Point(175, 356);
+            lnkRegistro.Location = new Point(153, 259);
             lnkRegistro.Name = "lnkRegistro";
-            lnkRegistro.Size = new Size(76, 20);
+            lnkRegistro.Size = new Size(59, 15);
             lnkRegistro.TabIndex = 8;
             lnkRegistro.TabStop = true;
             lnkRegistro.Text = "Registrate";
@@ -130,40 +127,28 @@
             // lblRegistro
             // 
             lblRegistro.AutoSize = true;
-            lblRegistro.Location = new Point(14, 356);
+            lblRegistro.Location = new Point(12, 259);
             lblRegistro.Name = "lblRegistro";
-            lblRegistro.Size = new Size(155, 20);
+            lblRegistro.Size = new Size(124, 15);
             lblRegistro.TabIndex = 9;
             lblRegistro.Text = "¿Aun no tiene cuenta?";
-            // 
-            // lblValidar
-            // 
-            lblValidar.AutoSize = true;
-            lblValidar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblValidar.Location = new Point(298, 235);
-            lblValidar.Name = "lblValidar";
-            lblValidar.Size = new Size(65, 20);
-            lblValidar.TabIndex = 10;
-            lblValidar.Text = "textoVal";
-            lblValidar.Visible = false;
             // 
             // lnkOlvidaPass
             // 
             lnkOlvidaPass.AutoSize = true;
             lnkOlvidaPass.Cursor = Cursors.Hand;
-            lnkOlvidaPass.Location = new Point(14, 389);
+            lnkOlvidaPass.Location = new Point(12, 284);
             lnkOlvidaPass.Name = "lnkOlvidaPass";
-            lnkOlvidaPass.Size = new Size(164, 20);
+            lnkOlvidaPass.Size = new Size(119, 15);
             lnkOlvidaPass.TabIndex = 5;
             lnkOlvidaPass.TabStop = true;
-            lnkOlvidaPass.Text = "Olvidaste tu contraseña";
+            lnkOlvidaPass.Text = "Olvidé mi contraseña";
             // 
             // formLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(649, 421);
-            Controls.Add(lblValidar);
+            ClientSize = new Size(445, 316);
             Controls.Add(lblRegistro);
             Controls.Add(lnkRegistro);
             Controls.Add(txtPass);
@@ -174,7 +159,6 @@
             Controls.Add(lblTitle);
             Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "formLogin";
             Text = "Inicio de Sesión";
             ResumeLayout(false);
@@ -192,7 +176,6 @@
         private TextBox txtPass;
         private LinkLabel lnkRegistro;
         private Label lblRegistro;
-        private Label lblValidar;
         private LinkLabel lnkOlvidaPass;
     }
 }

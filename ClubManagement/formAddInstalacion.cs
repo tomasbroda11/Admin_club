@@ -38,16 +38,16 @@ namespace ClubManagement
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if(txtID.Text.Length == 0 || txtDescripcion.Text.Length == 0 || cbActivo.SelectedIndex == -1 || cbActividades.SelectedIndex == -1)
+            if (txtID.Text.Length == 0 || txtDescripcion.Text.Length == 0 || cbActivo.SelectedIndex == -1 || cbActividades.SelectedIndex == -1)
             {
                 MessageBox.Show("Los campos deben estar completos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
+            }
             else
             {
                 ABMInstalaciones abmInstalaciones = new ABMInstalaciones();
                 Instalacion instalacionEncontrada = abmInstalaciones.obtenerInstalacionPorId(int.Parse(txtID.Text));
 
-                if(instalacionEncontrada != null)
+                if (instalacionEncontrada != null)
                 {
                     MessageBox.Show("El ID ingresado ya se encuentra en uso, elija otro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -63,6 +63,7 @@ namespace ClubManagement
                             int.Parse(cbActivo.SelectedIndex.ToString()),
                             actividadSeleccionada
                         );
+
                     abmInstalaciones.add(nuevaInstalacion);
 
                     MessageBox.Show("La instalacion se agregó con exito!");

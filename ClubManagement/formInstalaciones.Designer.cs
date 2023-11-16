@@ -47,7 +47,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(256, 9);
+            label1.Location = new Point(48, 21);
             label1.Name = "label1";
             label1.Size = new Size(163, 32);
             label1.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             dataInstalaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataInstalaciones.Columns.AddRange(new DataGridViewColumn[] { Id, Descripcion, Activo, Actividad });
-            dataInstalaciones.Location = new Point(128, 65);
+            dataInstalaciones.Location = new Point(48, 77);
             dataInstalaciones.Name = "dataInstalaciones";
             dataInstalaciones.RowTemplate.Height = 25;
             dataInstalaciones.Size = new Size(417, 191);
@@ -86,7 +86,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(346, 297);
+            label2.Location = new Point(200, 294);
             label2.Name = "label2";
             label2.Size = new Size(21, 15);
             label2.TabIndex = 2;
@@ -94,7 +94,7 @@
             // 
             // btnAtras
             // 
-            btnAtras.Location = new Point(47, 289);
+            btnAtras.Location = new Point(48, 287);
             btnAtras.Name = "btnAtras";
             btnAtras.Size = new Size(75, 30);
             btnAtras.TabIndex = 3;
@@ -104,37 +104,37 @@
             // 
             // txtIdInstalacion
             // 
-            txtIdInstalacion.Location = new Point(373, 294);
+            txtIdInstalacion.Location = new Point(227, 291);
             txtIdInstalacion.Name = "txtIdInstalacion";
-            txtIdInstalacion.Size = new Size(76, 23);
+            txtIdInstalacion.Size = new Size(46, 23);
             txtIdInstalacion.TabIndex = 4;
             // 
             // btnEliminar
             // 
             btnEliminar.BackColor = Color.LightPink;
-            btnEliminar.Location = new Point(476, 291);
+            btnEliminar.Location = new Point(375, 286);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(90, 30);
             btnEliminar.TabIndex = 5;
-            btnEliminar.Text = "Dar de Baja";
+            btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // btnActualizar
             // 
             btnActualizar.BackColor = Color.PaleTurquoise;
-            btnActualizar.Location = new Point(572, 291);
+            btnActualizar.Location = new Point(279, 287);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(90, 30);
             btnActualizar.TabIndex = 6;
-            btnActualizar.Text = "Actualizar";
+            btnActualizar.Text = "Modificar";
             btnActualizar.UseVisualStyleBackColor = false;
             btnActualizar.Click += btnActualizar_Click;
             // 
             // btnAgregar
             // 
             btnAgregar.BackColor = Color.SpringGreen;
-            btnAgregar.Location = new Point(572, 65);
+            btnAgregar.Location = new Point(375, 41);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(90, 30);
             btnAgregar.TabIndex = 7;
@@ -146,7 +146,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(696, 348);
+            ClientSize = new Size(509, 339);
             Controls.Add(btnAgregar);
             Controls.Add(btnActualizar);
             Controls.Add(btnEliminar);

@@ -47,7 +47,7 @@
             // 
             lblMail.AutoSize = true;
             lblMail.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMail.Location = new Point(138, 223);
+            lblMail.Location = new Point(138, 228);
             lblMail.Name = "lblMail";
             lblMail.Size = new Size(30, 15);
             lblMail.TabIndex = 0;
@@ -77,7 +77,7 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitle.Location = new Point(201, 21);
+            lblTitle.Location = new Point(218, 9);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(170, 40);
             lblTitle.TabIndex = 3;
@@ -86,7 +86,7 @@
             // txtMail
             // 
             txtMail.Cursor = Cursors.IBeam;
-            txtMail.Location = new Point(174, 220);
+            txtMail.Location = new Point(174, 225);
             txtMail.Name = "txtMail";
             txtMail.Size = new Size(261, 23);
             txtMail.TabIndex = 4;
@@ -106,7 +106,6 @@
             // txtRepitePass
             // 
             txtRepitePass.BackColor = SystemColors.Window;
-            txtRepitePass.BorderStyle = BorderStyle.FixedSingle;
             txtRepitePass.Cursor = Cursors.IBeam;
             txtRepitePass.Location = new Point(174, 317);
             txtRepitePass.Name = "txtRepitePass";
@@ -139,25 +138,27 @@
             // 
             // btnAceptar
             // 
+            btnAceptar.BackColor = Color.FromArgb(192, 192, 255);
             btnAceptar.Cursor = Cursors.Hand;
             btnAceptar.Enabled = false;
             btnAceptar.Location = new Point(333, 402);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(102, 23);
+            btnAceptar.Size = new Size(102, 29);
             btnAceptar.TabIndex = 9;
             btnAceptar.Text = "Aceptar";
-            btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.UseVisualStyleBackColor = false;
             btnAceptar.Click += btnAceptar_Click;
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.FromArgb(255, 192, 192);
             btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.Location = new Point(174, 402);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(104, 23);
+            btnCancelar.Size = new Size(104, 29);
             btnCancelar.TabIndex = 10;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // lblNombre
@@ -232,7 +233,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(592, 487);
+            ClientSize = new Size(606, 487);
             Controls.Add(txtDNI);
             Controls.Add(lblDNI);
             Controls.Add(lblValidar);

@@ -54,9 +54,9 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(456, 9);
+            lblTitulo.Location = new Point(358, 9);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(107, 41);
+            lblTitulo.Size = new Size(87, 32);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Socios";
             // 
@@ -65,12 +65,11 @@
             dataSocios.AllowUserToOrderColumns = true;
             dataSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataSocios.Columns.AddRange(new DataGridViewColumn[] { Dni, Nombre, Apellido, Email, CuotasAsignadas, Debe, Monto });
-            dataSocios.Location = new Point(46, 57);
-            dataSocios.Margin = new Padding(3, 4, 3, 4);
+            dataSocios.Location = new Point(22, 63);
             dataSocios.Name = "dataSocios";
             dataSocios.RowHeadersWidth = 51;
             dataSocios.RowTemplate.Height = 25;
-            dataSocios.Size = new Size(944, 312);
+            dataSocios.Size = new Size(766, 234);
             dataSocios.TabIndex = 1;
             // 
             // Dni
@@ -132,9 +131,10 @@
             // 
             // btnAtras
             // 
-            btnAtras.Location = new Point(50, 422);
+            btnAtras.Location = new Point(22, 325);
+            btnAtras.Margin = new Padding(3, 2, 3, 2);
             btnAtras.Name = "btnAtras";
-            btnAtras.Size = new Size(95, 40);
+            btnAtras.Size = new Size(83, 30);
             btnAtras.TabIndex = 2;
             btnAtras.Text = "Atras";
             btnAtras.UseVisualStyleBackColor = true;
@@ -142,45 +142,50 @@
             // 
             // txtDni
             // 
-            txtDni.Location = new Point(620, 430);
+            txtDni.Location = new Point(506, 328);
+            txtDni.Margin = new Padding(3, 2, 3, 2);
             txtDni.Name = "txtDni";
-            txtDni.Size = new Size(155, 27);
+            txtDni.Size = new Size(106, 23);
             txtDni.TabIndex = 3;
             // 
             // btnActualiza
             // 
-            btnActualiza.Location = new Point(796, 429);
+            btnActualiza.BackColor = Color.FromArgb(192, 255, 255);
+            btnActualiza.Location = new Point(618, 325);
+            btnActualiza.Margin = new Padding(3, 2, 3, 2);
             btnActualiza.Name = "btnActualiza";
-            btnActualiza.Size = new Size(94, 29);
+            btnActualiza.Size = new Size(82, 30);
             btnActualiza.TabIndex = 4;
             btnActualiza.Text = "Actualizar";
-            btnActualiza.UseVisualStyleBackColor = true;
+            btnActualiza.UseVisualStyleBackColor = false;
             btnActualiza.Click += btnActualiza_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(900, 428);
+            btnEliminar.BackColor = Color.FromArgb(255, 192, 192);
+            btnEliminar.Location = new Point(706, 326);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(82, 28);
             btnEliminar.TabIndex = 5;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // lblDni
             // 
             lblDni.AutoSize = true;
-            lblDni.Location = new Point(529, 433);
+            lblDni.Location = new Point(470, 333);
             lblDni.Name = "lblDni";
-            lblDni.Size = new Size(85, 20);
+            lblDni.Size = new Size(30, 15);
             lblDni.TabIndex = 6;
-            lblDni.Text = "Ingrese dni:";
+            lblDni.Text = "DNI:";
             // 
             // formSocios
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1024, 600);
+            ClientSize = new Size(811, 385);
             Controls.Add(lblDni);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualiza);
@@ -188,7 +193,6 @@
             Controls.Add(btnAtras);
             Controls.Add(dataSocios);
             Controls.Add(lblTitulo);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "formSocios";
             Text = "formSocios";
             Load += formSocios_Load;

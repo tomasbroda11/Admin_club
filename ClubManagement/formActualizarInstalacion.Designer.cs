@@ -45,16 +45,16 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(169, 9);
+            label1.Location = new Point(112, 9);
             label1.Name = "label1";
             label1.Size = new Size(261, 32);
             label1.TabIndex = 1;
-            label1.Text = "Actualizar Instalacion";
+            label1.Text = "Actualizar Instalación";
             // 
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.FromArgb(255, 192, 192);
-            btnCancelar.Location = new Point(169, 303);
+            btnCancelar.Location = new Point(123, 259);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 30);
             btnCancelar.TabIndex = 4;
@@ -66,7 +66,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(116, 211);
+            label2.Location = new Point(58, 196);
             label2.Name = "label2";
             label2.Size = new Size(59, 15);
             label2.TabIndex = 5;
@@ -77,7 +77,7 @@
             cbActividades.DropDownStyle = ComboBoxStyle.DropDownList;
             cbActividades.FlatStyle = FlatStyle.System;
             cbActividades.FormattingEnabled = true;
-            cbActividades.Location = new Point(181, 208);
+            cbActividades.Location = new Point(123, 193);
             cbActividades.Name = "cbActividades";
             cbActividades.Size = new Size(237, 23);
             cbActividades.TabIndex = 6;
@@ -86,7 +86,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(155, 101);
+            label3.Location = new Point(97, 86);
             label3.Name = "label3";
             label3.Size = new Size(20, 15);
             label3.TabIndex = 7;
@@ -96,7 +96,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(103, 139);
+            label4.Location = new Point(45, 124);
             label4.Name = "label4";
             label4.Size = new Size(72, 15);
             label4.TabIndex = 8;
@@ -106,7 +106,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(133, 174);
+            label5.Location = new Point(75, 159);
             label5.Name = "label5";
             label5.Size = new Size(42, 15);
             label5.TabIndex = 9;
@@ -118,21 +118,23 @@
             cbActivo.FlatStyle = FlatStyle.System;
             cbActivo.FormattingEnabled = true;
             cbActivo.Items.AddRange(new object[] { "0", "1" });
-            cbActivo.Location = new Point(181, 171);
+            cbActivo.Location = new Point(123, 156);
             cbActivo.Name = "cbActivo";
             cbActivo.Size = new Size(237, 23);
             cbActivo.TabIndex = 10;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(181, 136);
+            txtDescripcion.Location = new Point(123, 121);
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(237, 23);
             txtDescripcion.TabIndex = 11;
             // 
             // txtID
             // 
-            txtID.Location = new Point(181, 98);
+            txtID.BackColor = SystemColors.InactiveCaption;
+            txtID.Enabled = false;
+            txtID.Location = new Point(123, 83);
             txtID.Name = "txtID";
             txtID.Size = new Size(237, 23);
             txtID.TabIndex = 12;
@@ -140,11 +142,11 @@
             // btnActualizar
             // 
             btnActualizar.BackColor = Color.FromArgb(192, 255, 255);
-            btnActualizar.Location = new Point(343, 303);
+            btnActualizar.Location = new Point(285, 259);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(75, 30);
             btnActualizar.TabIndex = 13;
-            btnActualizar.Text = "Actualizar";
+            btnActualizar.Text = "Modificar";
             btnActualizar.UseVisualStyleBackColor = false;
             btnActualizar.Click += btnActualizar_Click;
             // 
@@ -152,7 +154,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(623, 345);
+            ClientSize = new Size(486, 318);
             Controls.Add(btnActualizar);
             Controls.Add(txtID);
             Controls.Add(txtDescripcion);
@@ -165,7 +167,7 @@
             Controls.Add(btnCancelar);
             Controls.Add(label1);
             Name = "formActualizarInstalacion";
-            Text = "formActualizarInstalacion";
+            Text = "Actualizar Instalación";
             Load += formActualizarInstalacion_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -57,7 +57,10 @@ namespace Negocio
         {
             return dp.getPersonaByDNI(dni);
         }
-        
+        public bool validarMail(string mail)
+        {
+            return dp.EsMailValido(mail);
+        }
 
     }
 }

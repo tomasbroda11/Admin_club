@@ -41,7 +41,9 @@
             // 
             lblMenu.AutoSize = true;
             lblMenu.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMenu.Location = new Point(197, 9);
+
+            lblMenu.Location = new Point(207, 9);
+
             lblMenu.Name = "lblMenu";
             lblMenu.Size = new Size(320, 37);
             lblMenu.TabIndex = 1;
@@ -49,7 +51,9 @@
             // 
             // btnProfesores
             // 
-            btnProfesores.Location = new Point(265, 210);
+            btnProfesores.Location = new Point(303, 255);
+            btnProfesores.Margin = new Padding(3, 4, 3, 4);
+
             btnProfesores.Name = "btnProfesores";
             btnProfesores.Size = new Size(161, 33);
             btnProfesores.TabIndex = 3;
@@ -59,7 +63,10 @@
             // 
             // btnSocios
             // 
-            btnSocios.Location = new Point(265, 171);
+
+            btnSocios.Location = new Point(303, 203);
+            btnSocios.Margin = new Padding(3, 4, 3, 4);
+
             btnSocios.Name = "btnSocios";
             btnSocios.Size = new Size(161, 33);
             btnSocios.TabIndex = 4;
@@ -70,7 +77,10 @@
             // btnReservas
             // 
             btnReservas.BackColor = Color.FromArgb(192, 192, 255);
-            btnReservas.Location = new Point(265, 113);
+
+            btnReservas.Location = new Point(303, 151);
+            btnReservas.Margin = new Padding(3, 4, 3, 4);
+
             btnReservas.Name = "btnReservas";
             btnReservas.Size = new Size(161, 33);
             btnReservas.TabIndex = 5;
@@ -80,7 +90,10 @@
             // 
             // btnInstalaciones
             // 
-            btnInstalaciones.Location = new Point(265, 249);
+
+            btnInstalaciones.Location = new Point(303, 307);
+            btnInstalaciones.Margin = new Padding(3, 4, 3, 4);
+
             btnInstalaciones.Name = "btnInstalaciones";
             btnInstalaciones.Size = new Size(161, 33);
             btnInstalaciones.TabIndex = 7;
@@ -102,7 +115,10 @@
             // btnHistorico
             // 
             btnHistorico.BackColor = Color.FromArgb(192, 255, 255);
-            btnHistorico.Location = new Point(265, 74);
+
+            btnHistorico.Location = new Point(303, 99);
+            btnHistorico.Margin = new Padding(3, 4, 3, 4);
+
             btnHistorico.Name = "btnHistorico";
             btnHistorico.Size = new Size(161, 33);
             btnHistorico.TabIndex = 9;

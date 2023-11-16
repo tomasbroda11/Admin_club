@@ -31,8 +31,9 @@ namespace ClubManagement
         private void btnDatos_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formActualizarSocio formActualizar = new formActualizarSocio(this.profe);
-            formActualizar.ShowDialog();
+            formDatosProfes formDatosProfes= new formDatosProfes(this.profe);
+            formDatosProfes.ShowDialog();
+            this.Close();
         }
 
         private void btnEntrenamientos_Click(object sender, EventArgs e)

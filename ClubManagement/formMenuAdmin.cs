@@ -103,7 +103,7 @@ namespace ClubManagement
 
         private void btnHistorico_Click(object sender, EventArgs e)
         {
-            this.Hide();    
+            this.Hide();
             formPresentacionReservas formPres = new formPresentacionReservas();
             formPres.ShowDialog();
             this.Close();

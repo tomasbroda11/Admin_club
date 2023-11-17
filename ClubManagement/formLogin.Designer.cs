@@ -35,9 +35,6 @@
             lblPass = new Label();
             txtDNI = new TextBox();
             txtPass = new TextBox();
-            lnkRegistro = new LinkLabel();
-            lblRegistro = new Label();
-            lnkOlvidaPass = new LinkLabel();
             SuspendLayout();
             // 
             // btnAceptar
@@ -116,48 +113,13 @@
             txtPass.Size = new Size(274, 27);
             txtPass.TabIndex = 7;
             // 
-            // lnkRegistro
-            // 
-            lnkRegistro.AutoSize = true;
-            lnkRegistro.Cursor = Cursors.Hand;
-            lnkRegistro.Location = new Point(175, 345);
-            lnkRegistro.Name = "lnkRegistro";
-            lnkRegistro.Size = new Size(76, 20);
-            lnkRegistro.TabIndex = 8;
-            lnkRegistro.TabStop = true;
-            lnkRegistro.Text = "Registrate";
-            lnkRegistro.LinkClicked += lnkRegistro_LinkClicked;
-            // 
-            // lblRegistro
-            // 
-            lblRegistro.AutoSize = true;
-            lblRegistro.Location = new Point(14, 345);
-            lblRegistro.Name = "lblRegistro";
-            lblRegistro.Size = new Size(155, 20);
-            lblRegistro.TabIndex = 9;
-            lblRegistro.Text = "¿Aun no tiene cuenta?";
-            // 
-            // lnkOlvidaPass
-            // 
-            lnkOlvidaPass.AutoSize = true;
-            lnkOlvidaPass.Cursor = Cursors.Hand;
-            lnkOlvidaPass.Location = new Point(14, 379);
-            lnkOlvidaPass.Name = "lnkOlvidaPass";
-            lnkOlvidaPass.Size = new Size(149, 20);
-            lnkOlvidaPass.TabIndex = 5;
-            lnkOlvidaPass.TabStop = true;
-            lnkOlvidaPass.Text = "Olvidé mi contraseña";
-            // 
             // formLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(509, 421);
-            Controls.Add(lblRegistro);
-            Controls.Add(lnkRegistro);
             Controls.Add(txtPass);
             Controls.Add(txtDNI);
-            Controls.Add(lnkOlvidaPass);
             Controls.Add(lblPass);
             Controls.Add(lblDNI);
             Controls.Add(lblTitle);
@@ -179,8 +141,5 @@
         private Label lblPass;
         private TextBox txtDNI;
         private TextBox txtPass;
-        private LinkLabel lnkRegistro;
-        private Label lblRegistro;
-        private LinkLabel lnkOlvidaPass;
     }
 }

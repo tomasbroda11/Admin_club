@@ -44,6 +44,11 @@ namespace ClubManagement
             }
             else
             {
+                if (!int.TryParse(txtID.Text, out int id))
+                {
+                    MessageBox.Show("El ID debe ser un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 ABMInstalaciones abmInstalaciones = new ABMInstalaciones();
                 Instalacion instalacionEncontrada = abmInstalaciones.obtenerInstalacionPorId(int.Parse(txtID.Text));
 
@@ -54,8 +59,10 @@ namespace ClubManagement
                 }
                 else
                 {
+                    string actSeleccionada = cbActividades.SelectedItem.ToString();
                     ABMActividades abmActividades = new ABMActividades();
-                    Actividad actividadSeleccionada = abmActividades.obtenerActividadPorDesc(cbActividades.SelectedItem.ToString());
+                    Actividad actividadSeleccionada = abmActividades.obtenerActividadPorDesc(actSeleccionada);
+                    
                     Instalacion nuevaInstalacion = new Instalacion
                         (
                             int.Parse(txtID.Text),
@@ -64,13 +71,20 @@ namespace ClubManagement
                             actividadSeleccionada
                         );
 
-                    abmInstalaciones.add(nuevaInstalacion);
+                    int instalacionExitosa = abmInstalaciones.add(nuevaInstalacion);
 
-                    MessageBox.Show("La instalacion se agregó con exito!");
-                    this.Hide();
-                    formInstalaciones formInstalaciones = new formInstalaciones();
-                    formInstalaciones.ShowDialog();
-                    this.Close();
+                    if(instalacionExitosa == 1)
+                    {
+                        MessageBox.Show("La instalacion se agregó con exito!");
+                        this.Hide();
+                        formInstalaciones formInstalaciones = new formInstalaciones();
+                        formInstalaciones.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un problema al insertar la instalacion.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

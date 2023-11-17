@@ -23,6 +23,11 @@ namespace ClubManagement
             }
             else
             {
+                if (!int.TryParse(txtDNI.Text, out int id))
+                {
+                    MessageBox.Show("El DNI debe ser un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 ABMpersonas pers = new ABMpersonas();
                 Persona p = pers.validarInicio(this.txtDNI.Text, this.txtPass.Text);
                 if (p != null)

@@ -48,11 +48,12 @@
             // 
             dataProfesores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataProfesores.Columns.AddRange(new DataGridViewColumn[] { Dni, Nombre, Apellido, Email, Actividad });
-            dataProfesores.Location = new Point(57, 118);
+            dataProfesores.Location = new Point(35, 86);
+            dataProfesores.Margin = new Padding(3, 2, 3, 2);
             dataProfesores.Name = "dataProfesores";
             dataProfesores.RowHeadersWidth = 51;
             dataProfesores.RowTemplate.Height = 29;
-            dataProfesores.Size = new Size(699, 227);
+            dataProfesores.Size = new Size(510, 170);
             dataProfesores.TabIndex = 0;
             // 
             // Dni
@@ -94,17 +95,18 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(304, 9);
+            lblTitulo.Location = new Point(35, 30);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(166, 41);
+            lblTitulo.Size = new Size(136, 32);
             lblTitulo.TabIndex = 1;
             lblTitulo.Text = "Profesores";
             // 
             // btnAtras
             // 
-            btnAtras.Location = new Point(26, 386);
+            btnAtras.Location = new Point(35, 281);
+            btnAtras.Margin = new Padding(3, 2, 3, 2);
             btnAtras.Name = "btnAtras";
-            btnAtras.Size = new Size(105, 42);
+            btnAtras.Size = new Size(92, 32);
             btnAtras.TabIndex = 2;
             btnAtras.Text = "Atras";
             btnAtras.UseVisualStyleBackColor = true;
@@ -112,26 +114,28 @@
             // 
             // txtDni
             // 
-            txtDni.Location = new Point(408, 387);
+            txtDni.Location = new Point(275, 286);
+            txtDni.Margin = new Padding(3, 2, 3, 2);
             txtDni.Name = "txtDni";
-            txtDni.Size = new Size(148, 27);
+            txtDni.Size = new Size(94, 23);
             txtDni.TabIndex = 3;
             // 
             // lblIngresar
             // 
             lblIngresar.AutoSize = true;
-            lblIngresar.Location = new Point(317, 390);
+            lblIngresar.Location = new Point(239, 290);
             lblIngresar.Name = "lblIngresar";
-            lblIngresar.Size = new Size(85, 20);
+            lblIngresar.Size = new Size(30, 15);
             lblIngresar.TabIndex = 4;
-            lblIngresar.Text = "Ingrese dni:";
+            lblIngresar.Text = "DNI:";
             // 
             // btnModificar
             // 
             btnModificar.BackColor = Color.FromArgb(192, 255, 255);
-            btnModificar.Location = new Point(562, 385);
+            btnModificar.Location = new Point(375, 283);
+            btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(94, 29);
+            btnModificar.Size = new Size(82, 28);
             btnModificar.TabIndex = 5;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = false;
@@ -140,9 +144,10 @@
             // btnEliminar
             // 
             btnEliminar.BackColor = Color.FromArgb(255, 192, 192);
-            btnEliminar.Location = new Point(662, 386);
+            btnEliminar.Location = new Point(463, 283);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(82, 28);
             btnEliminar.TabIndex = 6;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -151,9 +156,10 @@
             // btnAgregar
             // 
             btnAgregar.BackColor = Color.FromArgb(192, 255, 192);
-            btnAgregar.Location = new Point(638, 64);
+            btnAgregar.Location = new Point(450, 53);
+            btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(109, 39);
+            btnAgregar.Size = new Size(95, 29);
             btnAgregar.TabIndex = 7;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
@@ -161,9 +167,9 @@
             // 
             // formProfesores
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(597, 338);
             Controls.Add(btnAgregar);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
@@ -172,6 +178,7 @@
             Controls.Add(btnAtras);
             Controls.Add(lblTitulo);
             Controls.Add(dataProfesores);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "formProfesores";
             Text = "Profesores";
             Load += formProfesores_Load;

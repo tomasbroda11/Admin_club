@@ -41,9 +41,11 @@ namespace ClubManagement
                     txtApellido.Text,
                     txtMail.Text,
                     "",
-                    ""
+                    this.persona.getRol()
                     );
+
                     abmPers.update(pers);
+
                     if (this.persona.getRol() == "user")
                     {
                         MessageBox.Show("Tus datos han sidos actualizados con exito!");

@@ -19,14 +19,6 @@ namespace ClubManagement
             InitializeComponent();
         }
 
-        private void lnkIngresar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            formLogin formIngreso = new formLogin();
-            formIngreso.ShowDialog();
-            this.Close();
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -51,11 +51,11 @@ namespace ClubManagement
                 dataGridViewCuotas.Rows[rowIndex].Cells["monto"].Value = cuota.Monto;
                 dataGridViewCuotas.Rows[rowIndex].Cells["pago"].Value = pagado;
             }
-            foreach (DataGridViewColumn column in dataGridViewCuotas.Columns)
+            /*foreach (DataGridViewColumn column in dataGridViewCuotas.Columns)
             {
                 column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
-            }
+            }*/
 
             return cuotasDePersona;
         }
@@ -101,7 +101,7 @@ namespace ClubManagement
                 dataGridViewCuotas.Rows[rowIndex].Cells["monto"].Value = cuota.Monto;
                 dataGridViewCuotas.Rows[rowIndex].Cells["pago"].Value = cuota.Pagado ? "Pago" : "Sin pagar";
             }
-            dataGridViewCuotas.AutoResizeColumns();
+            //dataGridViewCuotas.AutoResizeColumns();
         }
         public void cbAnio_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -69,5 +69,13 @@ namespace ClubManagement
             }
             else MessageBox.Show("Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formProfesores formProfe = new formProfesores();
+            formProfe.Show();
+            this.Close();
+        }
     }
 }

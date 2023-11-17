@@ -65,7 +65,7 @@
             dataGridViewCuotas.ReadOnly = true;
             dataGridViewCuotas.RowHeadersWidth = 51;
             dataGridViewCuotas.RowTemplate.Height = 29;
-            dataGridViewCuotas.Size = new Size(633, 260);
+            dataGridViewCuotas.Size = new Size(560, 260);
             dataGridViewCuotas.TabIndex = 0;
             dataGridViewCuotas.CellContentClick += dataGridView1_CellContentClick;
             // 

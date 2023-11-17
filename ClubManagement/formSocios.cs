@@ -66,9 +66,9 @@ namespace ClubManagement
             if (result == DialogResult.Yes)
             {
                 ABMpersonas abmPersonas = new ABMpersonas();
-                int personaExiste = abmPersonas.buscaPersona(int.Parse(txtDni.Text));
+                Persona personaExiste = abmPersonas.buscaPersonaXDni(txtDni.Text);
 
-                if (personaExiste == 2)
+                if (personaExiste != null)
                 {
                     abmPersonas.delete(txtDni.Text);
                     MessageBox.Show("Usuario eliminado con exito!");

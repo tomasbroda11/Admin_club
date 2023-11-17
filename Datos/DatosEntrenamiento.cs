@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,7 +36,7 @@ namespace Datos
                         TimeOnly horaHasta = TimeOnly.FromTimeSpan(reader.GetTimeSpan(reader.GetOrdinal("horaHasta")));
                         int dia = (int)reader["dia"];
                         Instalacion ins = new DatosInstalacion().obtenerInstalacionXId((int)reader["idInstalacion"]);
-                        Profesor profesor = new Profesor();
+                        Profesor profesor = new DatosPersona().getProfesorByDNI(reader["idProfesor"].ToString());
 
                         e = new Entrenamiento(idEntrenamiento, horaDesde, horaHasta, dia, ins, profesor);
                     }
@@ -145,7 +146,7 @@ namespace Datos
             List<Entrenamiento> entrenamientos= new List<Entrenamiento>();
 
             SqlConnection connection = Conexion.openConection();
-            string query = "SELECT  idEntrenamiento, horaDesde, horaHasta, dia, idProfesor, idInstalacion FROM entrenamientos WHERE idProfesor = @idProfesor;";
+            string query = "SELECT  idEntrenamiento, horaDesde, horaHasta, dia, idProfesor, idInstalacion FROM entrenamientos WHERE idProfesor = @idProfesor order by dia ;";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -154,20 +155,15 @@ namespace Datos
                 {
                     while (reader.Read())
                     {
-                        Random random = new Random();
-
-                        int hour = random.Next(8, 21);
-                        int HoraDos = hour + 1;
-                        TimeOnly randomTime = new TimeOnly(hour, 0, 0);
-                        TimeOnly timeOneHourLater = randomTime.AddHours(1);
+                        
                         Entrenamiento ent = new Entrenamiento
                         (
                             int.Parse(reader["idEntrenamiento"].ToString()),
-                            randomTime,
-                            timeOneHourLater,
+                            TimeOnly.FromTimeSpan(reader.GetTimeSpan(reader.GetOrdinal("horaDesde"))),
+                            TimeOnly.FromTimeSpan(reader.GetTimeSpan(reader.GetOrdinal("horaHasta"))),
                             int.Parse(reader["dia"].ToString()),
                             new DatosInstalacion().obtenerInstalacionXId(int.Parse(reader["idInstalacion"].ToString())),
-                            new Profesor()
+                            new DatosPersona().getProfesorByDNI(dni)
                         
                         );
                         entrenamientos.Add(ent);

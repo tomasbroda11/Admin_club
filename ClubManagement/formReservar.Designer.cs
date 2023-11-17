@@ -66,7 +66,6 @@
             calendar.MinDate = new DateTime(2023, 11, 9, 22, 5, 33, 0);
             calendar.Name = "calendar";
             calendar.TabIndex = 3;
-            calendar.DateChanged += calendar_DateChanged;
             // 
             // lblHorario
             // 
@@ -120,10 +119,11 @@
             cbHorario.Name = "cbHorario";
             cbHorario.Size = new Size(231, 28);
             cbHorario.TabIndex = 9;
+            cbHorario.Click += cbHorario_Click;
             // 
             // btnAceptar
             // 
-            btnAceptar.BackColor = SystemColors.Highlight;
+            btnAceptar.BackColor = Color.FromArgb(192, 255, 255);
             btnAceptar.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnAceptar.Location = new Point(692, 454);
             btnAceptar.Name = "btnAceptar";
@@ -135,12 +135,13 @@
             // 
             // btnAtras
             // 
+            btnAtras.BackColor = Color.FromArgb(255, 192, 192);
             btnAtras.Location = new Point(402, 454);
             btnAtras.Name = "btnAtras";
             btnAtras.Size = new Size(123, 54);
             btnAtras.TabIndex = 11;
-            btnAtras.Text = "Atras";
-            btnAtras.UseVisualStyleBackColor = true;
+            btnAtras.Text = "Cancelar";
+            btnAtras.UseVisualStyleBackColor = false;
             btnAtras.Click += btnAtras_Click;
             // 
             // formReservar

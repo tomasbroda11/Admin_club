@@ -37,10 +37,9 @@
             // radbutReservasMes
             // 
             radbutReservasMes.AutoSize = true;
-            radbutReservasMes.Location = new Point(581, 25);
-            radbutReservasMes.Margin = new Padding(3, 2, 3, 2);
+            radbutReservasMes.Location = new Point(664, 33);
             radbutReservasMes.Name = "radbutReservasMes";
-            radbutReservasMes.Size = new Size(116, 19);
+            radbutReservasMes.Size = new Size(145, 24);
             radbutReservasMes.TabIndex = 0;
             radbutReservasMes.TabStop = true;
             radbutReservasMes.Text = "Reservas por Mes";
@@ -49,10 +48,9 @@
             // radbutReservasActividad
             // 
             radbutReservasActividad.AutoSize = true;
-            radbutReservasActividad.Location = new Point(581, 48);
-            radbutReservasActividad.Margin = new Padding(3, 2, 3, 2);
+            radbutReservasActividad.Location = new Point(664, 64);
             radbutReservasActividad.Name = "radbutReservasActividad";
-            radbutReservasActividad.Size = new Size(144, 19);
+            radbutReservasActividad.Size = new Size(181, 24);
             radbutReservasActividad.TabIndex = 1;
             radbutReservasActividad.TabStop = true;
             radbutReservasActividad.Text = "Reservas por Actividad";
@@ -61,9 +59,10 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(224, 224, 224);
-            button1.Location = new Point(12, 12);
+            button1.Location = new Point(12, 3);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(83, 28);
+            button1.Size = new Size(95, 37);
             button1.TabIndex = 2;
             button1.Text = "Volver";
             button1.UseVisualStyleBackColor = false;
@@ -72,9 +71,10 @@
             // btnImprimir
             // 
             btnImprimir.BackColor = Color.FromArgb(128, 255, 255);
-            btnImprimir.Location = new Point(620, 98);
+            btnImprimir.Location = new Point(709, 131);
+            btnImprimir.Margin = new Padding(3, 4, 3, 4);
             btnImprimir.Name = "btnImprimir";
-            btnImprimir.Size = new Size(66, 47);
+            btnImprimir.Size = new Size(75, 63);
             btnImprimir.TabIndex = 3;
             btnImprimir.Text = "Imprimir";
             btnImprimir.UseVisualStyleBackColor = false;
@@ -82,14 +82,13 @@
             // 
             // formPresentacionReservas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(737, 486);
+            ClientSize = new Size(842, 648);
             Controls.Add(btnImprimir);
             Controls.Add(button1);
             Controls.Add(radbutReservasActividad);
             Controls.Add(radbutReservasMes);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "formPresentacionReservas";
             Text = "Hisotrico de reservas";
             ResumeLayout(false);

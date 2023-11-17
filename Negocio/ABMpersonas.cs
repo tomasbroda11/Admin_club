@@ -61,6 +61,9 @@ namespace Negocio
         {
             return dp.EsMailValido(mail);
         }
-
+        public Profesor buscaProfeXDni(string dni)
+        {
+            return dp.getProfesorByDNI(dni);
+        }
     }
 }

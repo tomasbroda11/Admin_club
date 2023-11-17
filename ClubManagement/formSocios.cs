@@ -102,5 +102,13 @@ namespace ClubManagement
 
             else MessageBox.Show("No existe el dni ingresado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formAddSocio formAgegar = new formAddSocio();
+            formAgegar.Show();
+            this.Close();
+        }
     }
 }

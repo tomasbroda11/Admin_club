@@ -39,21 +39,24 @@ namespace ClubManagement
             }
         }
 
-        private void calendar_DateChanged(object sender, DateRangeEventArgs e)
+        /*private void calendar_DateChanged(object sender, DateRangeEventArgs e)
         {
-            cbHorario.Items.Clear();
-            List<TimeOnly> todasLasHoras = ObtenerTodasLasHoras();
-            ABMreservas abmres = new ABMreservas();
-            List<Reserva> reservas = abmres.consultarReservasDisponibles(cbIntalacion.SelectedItem.ToString(), calendar.SelectionRange.Start);
-            foreach (var reserva in reservas)
+            if (cbActividad.SelectedItem != null && cbIntalacion.SelectedItem != null)
             {
-                todasLasHoras.RemoveAll(hora => hora == reserva.Hora);
+                cbHorario.Items.Clear();
+                List<TimeOnly> todasLasHoras = ObtenerTodasLasHoras();
+                ABMreservas abmres = new ABMreservas();
+                List<Reserva> reservas = abmres.consultarReservasDisponibles(cbIntalacion.SelectedItem.ToString(), calendar.SelectionRange.Start);
+                foreach (var reserva in reservas)
+                {
+                    todasLasHoras.RemoveAll(hora => hora == reserva.Hora);
+                }
+                foreach (var hora in todasLasHoras)
+                {
+                    cbHorario.Items.Add(hora.ToString("hh:mm tt"));
+                }
             }
-            foreach (var hora in todasLasHoras)
-            {
-                cbHorario.Items.Add(hora.ToString("hh:mm tt"));
-            }
-        }
+        }*/
         private static List<TimeOnly> ObtenerTodasLasHoras()
         {
             return new List<TimeOnly>
@@ -74,24 +77,24 @@ namespace ClubManagement
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(cbActividad.SelectedItem != null && cbHorario.SelectedItem != null && cbIntalacion.SelectedItem != null && calendar.SelectionRange.Start != null)
+            if (cbActividad.SelectedItem != null && cbHorario.SelectedItem != null && cbIntalacion.SelectedItem != null && calendar.SelectionRange.Start != null)
             {
-                 Reserva reserva = new Reserva();
+                Reserva reserva = new Reserva();
                 reserva.Estado = "Pendiente";
                 reserva.Hora = TimeOnly.Parse(cbHorario.SelectedItem.ToString());
                 reserva.Turno = new DateTime(
-                    calendar.SelectionRange.Start.Year, 
-                    calendar.SelectionRange.Start.Month, 
-                    calendar.SelectionRange.Start.Day, 
+                    calendar.SelectionRange.Start.Year,
+                    calendar.SelectionRange.Start.Month,
+                    calendar.SelectionRange.Start.Day,
                     reserva.Hora.Hour,
                     0,
                     0
                     );
                 reserva.Persona = persona;
-                ABMInstalaciones abmi= new ABMInstalaciones();
+                ABMInstalaciones abmi = new ABMInstalaciones();
                 reserva.Instalacion = abmi.obtenerXDescripcion(cbIntalacion.SelectedItem.ToString());
                 ABMreservas ambr = new ABMreservas();
-                if(ambr.agregarReserva(reserva) >= 1)
+                if (ambr.agregarReserva(reserva) >= 1)
                 {
                     MessageBox.Show("Reserva creada con exito!");
                     this.Hide();
@@ -102,6 +105,25 @@ namespace ClubManagement
                 else MessageBox.Show("Ocurrio un problema, intente nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else MessageBox.Show("Complete todos los campos!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void cbHorario_Click(object sender, EventArgs e)
+        {
+            if (cbActividad.SelectedItem != null && cbIntalacion.SelectedItem != null && calendar.SelectionRange.Start != null)
+            {
+                cbHorario.Items.Clear();
+                List<TimeOnly> todasLasHoras = ObtenerTodasLasHoras();
+                ABMreservas abmres = new ABMreservas();
+                List<Reserva> reservas = abmres.consultarReservasDisponibles(cbIntalacion.SelectedItem.ToString(), calendar.SelectionRange.Start);
+                foreach (var reserva in reservas)
+                {
+                    todasLasHoras.RemoveAll(hora => hora == reserva.Hora);
+                }
+                foreach (var hora in todasLasHoras)
+                {
+                    cbHorario.Items.Add(hora.ToString("hh:mm tt"));
+                }
+            }
         }
     }
 }

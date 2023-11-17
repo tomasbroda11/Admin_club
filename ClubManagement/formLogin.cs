@@ -62,7 +62,7 @@ namespace ClubManagement
         private void lnkRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            formRegistro formregistro = new formRegistro();
+            formAddSocio formregistro = new formAddSocio();
             formregistro.ShowDialog();
         }
     }

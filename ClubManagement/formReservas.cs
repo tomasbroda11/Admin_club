@@ -70,18 +70,23 @@ namespace ClubManagement
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (txtId.Text != null)
+            if (txtId.Text.Length >= 1)
             {
                 ABMreservas form = new ABMreservas();
                 Reserva res = form.validarReserva(txtId.Text.ToString());
-                if (res != null)
+
+                if (res != null && res.Persona.getDni() == this.persona.getDni())
                 {
-                    form.cancelarReserva(res);
-                    MessageBox.Show("Reserva cancelada.");
-                    this.Hide();
-                    FormReservas formReser = new FormReservas(persona);
-                    formReser.ShowDialog();
-                    this.Close();
+                    if (res.Estado == "Pendiente")
+                    {
+                        form.cancelarReserva(res);
+                        MessageBox.Show("Reserva cancelada.");
+                        this.Hide();
+                        FormReservas formReser = new FormReservas(persona);
+                        formReser.ShowDialog();
+                        this.Close();
+                    }
+                    else MessageBox.Show("Esa reserva ya fue " + res.Estado.ToLower(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else MessageBox.Show("Reserva no encontrada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

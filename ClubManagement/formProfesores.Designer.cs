@@ -128,31 +128,35 @@
             // 
             // btnModificar
             // 
+            btnModificar.BackColor = Color.FromArgb(192, 255, 255);
             btnModificar.Location = new Point(562, 385);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(94, 29);
             btnModificar.TabIndex = 5;
             btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
+            btnEliminar.BackColor = Color.FromArgb(255, 192, 192);
             btnEliminar.Location = new Point(662, 386);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(94, 29);
             btnEliminar.TabIndex = 6;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // btnAgregar
             // 
+            btnAgregar.BackColor = Color.FromArgb(192, 255, 192);
             btnAgregar.Location = new Point(638, 64);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(109, 39);
             btnAgregar.TabIndex = 7;
             btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
             // formProfesores

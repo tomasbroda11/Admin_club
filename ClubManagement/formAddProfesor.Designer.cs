@@ -196,7 +196,6 @@
             cbActividad.Name = "cbActividad";
             cbActividad.Size = new Size(298, 28);
             cbActividad.TabIndex = 40;
-            cbActividad.SelectedValueChanged += cbActividad_SelectedValueChanged;
             // 
             // label1
             // 
@@ -210,21 +209,23 @@
             // 
             // btnAtras
             // 
+            btnAtras.BackColor = Color.FromArgb(255, 192, 192);
             btnAtras.Location = new Point(231, 511);
             btnAtras.Name = "btnAtras";
             btnAtras.Size = new Size(94, 29);
             btnAtras.TabIndex = 42;
-            btnAtras.Text = "Atras";
-            btnAtras.UseVisualStyleBackColor = true;
+            btnAtras.Text = "Cancelar";
+            btnAtras.UseVisualStyleBackColor = false;
             // 
             // btnAceptar
             // 
+            btnAceptar.BackColor = Color.FromArgb(192, 255, 255);
             btnAceptar.Location = new Point(453, 511);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(94, 29);
             btnAceptar.TabIndex = 43;
             btnAceptar.Text = "Aceptar";
-            btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.UseVisualStyleBackColor = false;
             btnAceptar.Click += btnAceptar_Click;
             // 
             // formAddProfesor

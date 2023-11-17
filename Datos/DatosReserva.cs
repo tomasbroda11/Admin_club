@@ -64,7 +64,7 @@ namespace Datos
             List<Reserva> reservas = new List<Reserva>();
 
             SqlConnection connection = Conexion.openConection();
-            string query = "SELECT idReservas, estado, fecha, hora , ins.idActividad , act.descripcion actDescripcion, act.costo, ins.idInstalacion, ins.descripcion insDescripcion, per.dni FROM reservas res INNER JOIN instalaciones ins on ins.idInstalacion = res.idInstalacion INNER JOIN personas per on per.dni = res.dni INNER JOIN actividades act on ins.idActividad = act.idActividad WHERE per.dni = @dni ;";
+            string query = "SELECT idReservas, estado, fecha, hora , ins.idActividad , act.descripcion actDescripcion, act.costo, ins.idInstalacion, ins.descripcion insDescripcion, per.dni FROM reservas res INNER JOIN instalaciones ins on ins.idInstalacion = res.idInstalacion INNER JOIN personas per on per.dni = res.dni INNER JOIN actividades act on ins.idActividad = act.idActividad WHERE per.dni = @dni order by res.fecha desc;";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -80,7 +80,6 @@ namespace Datos
                             reader["estado"].ToString(),
                             (DateTime)reader["fecha"],
                             TimeOnly.FromTimeSpan(reader.GetTimeSpan(reader.GetOrdinal("hora"))),
-                            //(TimeOnly)reader["hora"],
                             datosPersona.getPersonaByDNI(reader["dni"].ToString()),
                             new Instalacion
                             (

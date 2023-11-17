@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace ClubManagement
 {
-    public partial class formRegistro : Form
+    public partial class formAddSocio : Form
     {
-        public formRegistro()
+        public formAddSocio()
         {
             InitializeComponent();
         }
@@ -30,8 +30,8 @@ namespace ClubManagement
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formLogin formIngreso = new formLogin();
-            formIngreso.ShowDialog();
+            formSocios formSoc = new formSocios();
+            formSoc.ShowDialog();
             this.Close();
         }
 
@@ -178,27 +178,37 @@ namespace ClubManagement
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            ABMpersonas pers = new ABMpersonas();
-            Persona p = new Persona(int.Parse(txtDNI.Text), txtNombre.Text, txtApellido.Text, txtMail.Text, txtPass.Text, "user");
-            int v = pers.add(p);
-            if (v == 1)
+            if (this.txtDNI.Text.Length == 8 && int.TryParse(txtDNI.Text, out int dni))
             {
-                lblValidar.Visible = true;
-                lblValidar.Text = "Registro exitoso! Presione ingresar para iniciar sesión.";
-                lblValidar.ForeColor = Color.Green;
+                ABMpersonas abmPers = new ABMpersonas();
+                bool esValido = abmPers.validarMail(txtMail.Text.ToString());
+                if (esValido)
+                {
+
+                    ABMpersonas pers = new ABMpersonas();
+                    Persona p = new Persona(int.Parse(txtDNI.Text), txtNombre.Text, txtApellido.Text, txtMail.Text, txtPass.Text, "user");
+                    int v = pers.add(p);
+                    if (v == 1)
+                    {
+                        MessageBox.Show("Socio añadido correctamente", "Exito");
+                        this.Hide();
+                        formSocios formSoc = new formSocios();
+                        formSoc.ShowDialog();
+                        this.Close();
+                    }
+                    else if (v == 2)
+                    {
+                        MessageBox.Show("Dni ya registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else MessageBox.Show("Formato de mail incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
-            else if (v == 2)
-            {
-                lblValidar.Visible = true;
-                lblValidar.Text = "Este DNI ya está registrado.\nPresione ingresar para iniciar sesión.";
-                lblValidar.ForeColor = Color.Red;
-            }
-            else
-            {
-                lblValidar.Visible = true;
-                lblValidar.Text = "Ocurrio un error en el registro. Vuelva a intentar.";
-                lblValidar.ForeColor = Color.Red;
-            }
+            else MessageBox.Show("El dni debe ser un numero entero de 8 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
 

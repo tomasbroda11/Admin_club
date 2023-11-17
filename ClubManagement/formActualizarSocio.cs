@@ -56,7 +56,7 @@ namespace ClubManagement
                         ""
                         );
                     abmPers.update(pers);
-                    if(this.persona.getRol() == "user")
+                    if (this.persona.getRol() == "user")
                     {
                         MessageBox.Show("Socio actualizado con exito!");
                         this.Hide();
@@ -74,7 +74,8 @@ namespace ClubManagement
                         this.Close();
 
                     }
-                } else MessageBox.Show("Formato de mail incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else MessageBox.Show("Formato de mail incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else

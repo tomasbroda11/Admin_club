@@ -43,22 +43,24 @@
             // 
             // btnAcpetar
             // 
+            btnAcpetar.BackColor = Color.FromArgb(192, 255, 255);
             btnAcpetar.Location = new Point(487, 394);
             btnAcpetar.Name = "btnAcpetar";
             btnAcpetar.Size = new Size(96, 44);
             btnAcpetar.TabIndex = 38;
-            btnAcpetar.Text = "Actualizar";
-            btnAcpetar.UseVisualStyleBackColor = true;
+            btnAcpetar.Text = "Modificar";
+            btnAcpetar.UseVisualStyleBackColor = false;
             btnAcpetar.Click += btnAcpetar_Click;
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.FromArgb(255, 192, 192);
             btnCancelar.Location = new Point(285, 394);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(96, 44);
             btnCancelar.TabIndex = 37;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // lblTitle

@@ -131,22 +131,24 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.FromArgb(255, 192, 192);
             btnCancelar.Location = new Point(269, 420);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(96, 44);
             btnCancelar.TabIndex = 26;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // btnAcpetar
             // 
+            btnAcpetar.BackColor = Color.FromArgb(192, 255, 255);
             btnAcpetar.Location = new Point(471, 420);
             btnAcpetar.Name = "btnAcpetar";
             btnAcpetar.Size = new Size(96, 44);
             btnAcpetar.TabIndex = 27;
             btnAcpetar.Text = "Actualizar";
-            btnAcpetar.UseVisualStyleBackColor = true;
+            btnAcpetar.UseVisualStyleBackColor = false;
             btnAcpetar.Click += btnAcpetar_Click;
             // 
             // formActualizarSocio

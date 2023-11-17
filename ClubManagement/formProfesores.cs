@@ -52,33 +52,59 @@ namespace ClubManagement
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            if (txtDni.Text.Length > 0)
             {
 
-                ABMpersonas abmPersonas = new ABMpersonas();
-                Persona personaExiste = abmPersonas.buscaPersonaXDni(txtDni.Text);
-                if (personaExiste != null)
-                {
-                    abmPersonas.delete(txtDni.Text);
-                    MessageBox.Show("Profesor eliminado con exito!");
-                    this.Hide();
-                    formProfesores formProf = new formProfesores();
-                    formProf.Show();
-                    this.Close();
-                }
-                else MessageBox.Show("No existe el dni ingresado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult result = MessageBox.Show("¿Quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (result == DialogResult.Yes)
+                {
+
+                    ABMpersonas abmPersonas = new ABMpersonas();
+                    Persona personaExiste = abmPersonas.buscaPersonaXDni(txtDni.Text);
+                    if (personaExiste != null)
+                    {
+                        abmPersonas.delete(txtDni.Text);
+                        MessageBox.Show("Profesor eliminado con exito!");
+                        this.Hide();
+                        formProfesores formProf = new formProfesores();
+                        formProf.Show();
+                        this.Close();
+                    }
+                    else MessageBox.Show("No existe el dni ingresado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            else MessageBox.Show("Ingrese un dni", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formAddProfesor formAddProfe = new formAddProfesor();   
-            formAddProfe.Show();    
-            this.Close();   
+            formAddProfesor formAddProfe = new formAddProfesor();
+            formAddProfe.Show();
+            this.Close();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (txtDni.Text.Length > 0)
+            {
+
+                ABMpersonas abmPersonas = new ABMpersonas();
+                Profesor profeExiste = abmPersonas.buscaProfeXDni(txtDni.Text);
+                if (profeExiste != null)
+                {
+                    this.Hide();
+                    formEditProfes formProfes = new formEditProfes(profeExiste);
+                    formProfes.Show();
+                    this.Close();
+                }
+                else MessageBox.Show("No existe el dni ingresado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else MessageBox.Show("Ingrese un dni", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
     }
 }

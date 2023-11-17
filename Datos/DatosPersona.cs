@@ -160,7 +160,7 @@ namespace Datos
                             string rol = reader["rol"].ToString();
 
                             personaEncontrada = new Persona(numDoc, nombre, apellido, mail, "", rol);
-                            System.Diagnostics.Debug.WriteLine("BIEN");
+                            //System.Diagnostics.Debug.WriteLine("BIEN");
                         }
                     }
                     catch
@@ -176,6 +176,46 @@ namespace Datos
             return personaEncontrada;
         }
 
+        public Profesor getProfesorByDNI(string dni)
+        {
+            Profesor profesorEncontrado = null;
+
+            SqlConnection connection = Conexion.openConection();
+
+            string query = "SELECT * FROM personas p WHERE p.dni=@DNI";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@DNI", dni);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    try
+                    {
+                        if (reader.Read())
+                        {
+                            string nombre = reader["nombre"].ToString();
+                            string apellido = reader["apellido"].ToString();
+                            int numDoc = int.Parse(reader["dni"].ToString());
+                            string pass = reader["password"].ToString();
+                            string mail = reader["email"].ToString();
+                            string rol = reader["rol"].ToString();
+                            Actividad act = new DatosActividades().obtenerActividadXId(int.Parse(reader["idActividad"].ToString()));
+                            profesorEncontrado = new Profesor(numDoc, nombre, apellido, mail, "", rol, act);
+                        }
+                    }
+                    catch
+                    {
+                        Conexion.closeConnection(connection);
+                        System.Diagnostics.Debug.WriteLine("MAL");
+                        return null;
+                    }
+                }
+            }
+            Conexion.closeConnection(connection);
+
+            return profesorEncontrado;
+        }
         public int validarDuplicado(int dni)
         {
             List<Persona> personas = ObtenerSocios();
@@ -202,7 +242,7 @@ namespace Datos
                 {
                     connection = Conexion.openConection();
 
-                    string query = "INSERT INTO personas VALUES (@dni, @nombre, @apellido, @mail, @password, @rol)";
+                    string query = "INSERT INTO personas (dni,nombre,apellido,email,password,rol) VALUES (@dni, @nombre, @apellido, @mail, @password, @rol);";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -265,7 +305,7 @@ namespace Datos
                 }
             }
         }
-        public  bool EsMailValido(string email)
+        public bool EsMailValido(string email)
         {
             string expresionRegular = @"^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$";
             Regex regex = new Regex(expresionRegular, RegexOptions.IgnoreCase);

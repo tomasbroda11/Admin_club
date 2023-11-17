@@ -88,7 +88,7 @@ namespace ClubManagement
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if(txtIdInstalacion.Text.Length == 0)
+            if (txtIdInstalacion.Text.Length == 0)
             {
                 MessageBox.Show("Ingrese un ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

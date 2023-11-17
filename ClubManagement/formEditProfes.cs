@@ -6,23 +6,25 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClubManagement
 {
-    public partial class formEditMisDatos : Form
+    public partial class formEditProfes : Form
     {
-        Persona persona;
-        public formEditMisDatos(Persona p)
+        Profesor profesor;
+        public formEditProfes(Profesor prof)
         {
-            this.persona = p;
+            this.profesor = prof;
             InitializeComponent();
-            txtDNI.Text = persona.getDni().ToString();
-            txtNombre.Text = persona.getNombre().ToString();
-            txtApellido.Text = persona.getApellido().ToString();
-            txtMail.Text = persona.getMail().ToString();
+            txtDNI.Text = this.profesor.getDni().ToString();
+            txtNombre.Text = this.profesor.getNombre();
+            txtApellido.Text = this.profesor.getApellido();
+            txtMail.Text = this.profesor.getMail();
+
         }
 
         private void btnAcpetar_Click(object sender, EventArgs e)
@@ -35,32 +37,22 @@ namespace ClubManagement
                 if (esValido)
                 {
 
-                    Persona pers = new Persona(
-                    this.persona.getDni(),
+                    Profesor profe = new Profesor(
+                    this.profesor.getDni(),
                     txtNombre.Text,
                     txtApellido.Text,
                     txtMail.Text,
                     "",
-                    ""
+                    "",
+                    this.profesor.getActividad()
                     );
-                    abmPers.update(pers);
-                    if (this.persona.getRol() == "user")
-                    {
-                        MessageBox.Show("Tus datos han sidos actualizados con exito!");
-                        this.Hide();
-                        formMenu formMenu = new formMenu(pers);
-                        formMenu.Show();
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Modificacion exitosa!");
-                        Profesor p = (Profesor)this.persona;
-                        this.Hide();
-                        formMenuProfe formProf = new formMenuProfe(p);
-                        formProf.Show();
-                        this.Close();
-                    }
+                    abmPers.update(profe);
+                    MessageBox.Show("Modificacion exitosa!");
+                    this.Hide();
+                    formProfesores formProf = new formProfesores();
+                    formProf.Show();
+                    this.Close();
+
                 }
                 else MessageBox.Show("Formato de mail incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -74,10 +66,9 @@ namespace ClubManagement
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formMenu formMenu = new formMenu(this.persona);
-            formMenu.Show();
+            formProfesores formProf = new formProfesores();
+            formProf.Show();
             this.Close();
         }
     }
 }
-

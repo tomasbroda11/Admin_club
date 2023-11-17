@@ -26,8 +26,10 @@ namespace ClubManagement
         {
             cbHoraDesde.Items.Clear();
             List<TimeOnly> todasLasHoras = ObtenerTodasLasHoras();
+            todasLasHoras.RemoveAt(todasLasHoras.Count() - 1);
             foreach (var hora in todasLasHoras)
             {
+
                 cbHoraDesde.Items.Add(hora.ToString("hh:mm tt"));
             }
 
@@ -53,6 +55,7 @@ namespace ClubManagement
         private void cbHoraDesde_SelectedValueChanged(object sender, EventArgs e)
         {
             cbHoraHasta.Items.Clear();
+
             List<TimeOnly> todasLasHoras = ObtenerTodasLasHoras();
             foreach (var hora in todasLasHoras)
             {
@@ -63,48 +66,55 @@ namespace ClubManagement
             }
             cbHoraHasta.Enabled = true;
             cbHoraHasta.BackColor = SystemColors.Window;
+            cbHoraHasta.Text = "";
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            List<String> dias = new List<string> { "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" };
-            if (cbDia.SelectedItem != null && cbHoraDesde.SelectedItem != null && cbHoraHasta.SelectedItem != null && cbInstalacion.SelectedItem != null)
+            if (cbHoraHasta.Text != "")
             {
-                ABMEntrenamiento abme = new ABMEntrenamiento();
-                int dia = dias.IndexOf(cbDia.SelectedItem.ToString());
-                TimeOnly horaDesde = TimeOnly.Parse(cbHoraDesde.SelectedItem.ToString());
-                TimeOnly horaHasta = TimeOnly.Parse(cbHoraHasta.SelectedItem.ToString());
-                Instalacion instalacion = new ABMInstalaciones().obtenerXDescripcion(cbInstalacion.SelectedItem.ToString());
-                if (!abme.ExisteEntrenamientoEnFechaYHora(dia, horaDesde, horaHasta, instalacion))
+
+                List<String> dias = new List<string> { "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" };
+                if (cbDia.SelectedItem != null && cbHoraDesde.SelectedItem != null && cbHoraHasta.SelectedItem != null && cbInstalacion.SelectedItem != null)
                 {
-                    Entrenamiento ent = new Entrenamiento();
-                    ent.HoraDesde = horaDesde;
-                    ent.HoraHasta = horaHasta;
-                    ent.Dia = dia;
-                    ent.Instalacion = instalacion;
-                    ent.Profesor = this.profesor;
-                    abme.CrearEntrenamiento(ent);
-                    MessageBox.Show("Entrenamiento creado con exito!");
-                    this.Hide();
-                    formEntrenamientos formEnt = new formEntrenamientos(this.profesor);
-                    formEnt.Show();
-                    this.Close();
+
+                    ABMEntrenamiento abme = new ABMEntrenamiento();
+                    int dia = dias.IndexOf(cbDia.SelectedItem.ToString());
+                    TimeOnly horaDesde = TimeOnly.Parse(cbHoraDesde.SelectedItem.ToString());
+                    TimeOnly horaHasta = TimeOnly.Parse(cbHoraHasta.SelectedItem.ToString());
+                    Instalacion instalacion = new ABMInstalaciones().obtenerXDescripcion(cbInstalacion.SelectedItem.ToString());
+                    if (!abme.ExisteEntrenamientoEnFechaYHora(dia, horaDesde, horaHasta, instalacion))
+                    {
+                        Entrenamiento ent = new Entrenamiento();
+                        ent.HoraDesde = horaDesde;
+                        ent.HoraHasta = horaHasta;
+                        ent.Dia = dia;
+                        ent.Instalacion = instalacion;
+                        ent.Profesor = this.profesor;
+                        abme.CrearEntrenamiento(ent);
+                        MessageBox.Show("Entrenamiento creado con exito!");
+                        this.Hide();
+                        formEntrenamientos formEnt = new formEntrenamientos(this.profesor);
+                        formEnt.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("La instalacion no esta disponible en ese dia y hora", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("La instalacion no esta disponible en ese dia y hora");
+                    MessageBox.Show("Elija opcion de instalacion, dia, hora desde, hora hasta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Elija opcion de instalacion, dia, hora desde, hora hasta");
-            }
+            else MessageBox.Show("Verfique el rango horario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formEntrenamientos formEnt = Application.OpenForms["formEntrenamientos"] as formEntrenamientos;
+            formEntrenamientos formEnt = new formEntrenamientos(this.profesor);
             formEnt.Show();
             this.Close();
         }

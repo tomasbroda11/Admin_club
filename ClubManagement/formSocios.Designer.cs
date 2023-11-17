@@ -45,6 +45,7 @@
             btnActualiza = new Button();
             btnEliminar = new Button();
             lblDni = new Label();
+            btnAgregar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataSocios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personaBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personaBindingSource).BeginInit();
@@ -178,11 +179,23 @@
             lblDni.TabIndex = 6;
             lblDni.Text = "DNI:";
             // 
+            // btnAgregar
+            // 
+            btnAgregar.BackColor = Color.FromArgb(192, 255, 192);
+            btnAgregar.Location = new Point(784, 37);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(116, 40);
+            btnAgregar.TabIndex = 7;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
             // formSocios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(927, 513);
+            Controls.Add(btnAgregar);
             Controls.Add(lblDni);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualiza);
@@ -219,5 +232,6 @@
         private DataGridViewTextBoxColumn CuotasAsignadas;
         private DataGridViewTextBoxColumn Debe;
         private DataGridViewTextBoxColumn Monto;
+        private Button btnAgregar;
     }
 }

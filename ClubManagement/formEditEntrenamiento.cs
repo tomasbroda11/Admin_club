@@ -115,7 +115,7 @@ namespace ClubManagement
         private void btnAtras_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            formEntrenamientos formEnt = Application.OpenForms["formEntrenamientos"] as formEntrenamientos;
+            formEntrenamientos formEnt = new formEntrenamientos(this.profesor);
             formEnt.Show();
             this.Close();
         }

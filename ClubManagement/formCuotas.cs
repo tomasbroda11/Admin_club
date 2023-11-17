@@ -107,8 +107,12 @@ namespace ClubManagement
         {
             if (cbAnio.SelectedIndex != null)
             {
-
-                FiltrarCuotasPorAño(int.Parse(cbAnio.SelectedItem.ToString()), persona);
+                if (cbAnio.SelectedIndex == 0)
+                {
+                    dataGridViewCuotas.Rows.Clear();
+                    CargarCuotas(this.persona);
+                }
+                else FiltrarCuotasPorAño(int.Parse(cbAnio.SelectedItem.ToString()), persona);
             }
             else
             {

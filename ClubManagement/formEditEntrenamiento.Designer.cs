@@ -97,7 +97,7 @@
             // 
             // btnAceptar
             // 
-            btnAceptar.BackColor = SystemColors.Highlight;
+            btnAceptar.BackColor = Color.FromArgb(192, 255, 255);
             btnAceptar.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnAceptar.Location = new Point(595, 472);
             btnAceptar.Name = "btnAceptar";
@@ -127,13 +127,14 @@
             // 
             // btnAtras
             // 
+            btnAtras.BackColor = Color.FromArgb(255, 192, 192);
             btnAtras.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnAtras.Location = new Point(174, 480);
             btnAtras.Name = "btnAtras";
             btnAtras.Size = new Size(118, 45);
             btnAtras.TabIndex = 26;
             btnAtras.Text = "Atras";
-            btnAtras.UseVisualStyleBackColor = true;
+            btnAtras.UseVisualStyleBackColor = false;
             btnAtras.Click += btnAtras_Click_1;
             // 
             // lblTitle

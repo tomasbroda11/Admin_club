@@ -1,6 +1,6 @@
 ﻿namespace ClubManagement
 {
-    partial class formRegistro
+    partial class formAddSocio
     {
         /// <summary>
         /// Required designer variable.
@@ -47,9 +47,9 @@
             // 
             lblMail.AutoSize = true;
             lblMail.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMail.Location = new Point(138, 228);
+            lblMail.Location = new Point(158, 304);
             lblMail.Name = "lblMail";
-            lblMail.Size = new Size(30, 15);
+            lblMail.Size = new Size(39, 20);
             lblMail.TabIndex = 0;
             lblMail.Text = "Mail";
             // 
@@ -57,9 +57,9 @@
             // 
             lblPass.AutoSize = true;
             lblPass.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPass.Location = new Point(99, 273);
+            lblPass.Location = new Point(113, 364);
             lblPass.Name = "lblPass";
-            lblPass.Size = new Size(69, 15);
+            lblPass.Size = new Size(88, 20);
             lblPass.TabIndex = 1;
             lblPass.Text = "Contraseña";
             // 
@@ -67,9 +67,9 @@
             // 
             lblConfPass.AutoSize = true;
             lblConfPass.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblConfPass.Location = new Point(46, 320);
+            lblConfPass.Location = new Point(53, 427);
             lblConfPass.Name = "lblConfPass";
-            lblConfPass.Size = new Size(122, 15);
+            lblConfPass.Size = new Size(155, 20);
             lblConfPass.TabIndex = 2;
             lblConfPass.Text = "Confirma contraseña";
             // 
@@ -77,28 +77,30 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitle.Location = new Point(218, 9);
+            lblTitle.Location = new Point(249, 12);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(170, 40);
+            lblTitle.Size = new Size(215, 50);
             lblTitle.TabIndex = 3;
             lblTitle.Text = "Registrarse";
             // 
             // txtMail
             // 
             txtMail.Cursor = Cursors.IBeam;
-            txtMail.Location = new Point(174, 225);
+            txtMail.Location = new Point(199, 300);
+            txtMail.Margin = new Padding(3, 4, 3, 4);
             txtMail.Name = "txtMail";
-            txtMail.Size = new Size(261, 23);
+            txtMail.Size = new Size(298, 27);
             txtMail.TabIndex = 4;
             txtMail.Leave += txtMail_Leave;
             // 
             // txtPass
             // 
             txtPass.Cursor = Cursors.IBeam;
-            txtPass.Location = new Point(174, 270);
+            txtPass.Location = new Point(199, 360);
+            txtPass.Margin = new Padding(3, 4, 3, 4);
             txtPass.Name = "txtPass";
             txtPass.PasswordChar = '*';
-            txtPass.Size = new Size(261, 23);
+            txtPass.Size = new Size(298, 27);
             txtPass.TabIndex = 5;
             txtPass.TextChanged += txtPass_TextChanged;
             txtPass.Leave += txtPass_Leave;
@@ -107,10 +109,11 @@
             // 
             txtRepitePass.BackColor = SystemColors.Window;
             txtRepitePass.Cursor = Cursors.IBeam;
-            txtRepitePass.Location = new Point(174, 317);
+            txtRepitePass.Location = new Point(199, 423);
+            txtRepitePass.Margin = new Padding(3, 4, 3, 4);
             txtRepitePass.Name = "txtRepitePass";
             txtRepitePass.PasswordChar = '*';
-            txtRepitePass.Size = new Size(261, 23);
+            txtRepitePass.Size = new Size(298, 27);
             txtRepitePass.TabIndex = 6;
             txtRepitePass.TextChanged += txtRepitePass_TextChanged;
             txtRepitePass.Leave += txtRepitePass_Leave;
@@ -118,9 +121,9 @@
             // lblIngreso
             // 
             lblIngreso.AutoSize = true;
-            lblIngreso.Location = new Point(12, 450);
+            lblIngreso.Location = new Point(14, 600);
             lblIngreso.Name = "lblIngreso";
-            lblIngreso.Size = new Size(97, 15);
+            lblIngreso.Size = new Size(123, 20);
             lblIngreso.TabIndex = 7;
             lblIngreso.Text = "¿Ya tiene cuenta?";
             // 
@@ -128,9 +131,9 @@
             // 
             lnkIngresar.AutoSize = true;
             lnkIngresar.Cursor = Cursors.Hand;
-            lnkIngresar.Location = new Point(119, 450);
+            lnkIngresar.Location = new Point(136, 600);
             lnkIngresar.Name = "lnkIngresar";
-            lnkIngresar.Size = new Size(49, 15);
+            lnkIngresar.Size = new Size(62, 20);
             lnkIngresar.TabIndex = 8;
             lnkIngresar.TabStop = true;
             lnkIngresar.Text = "Ingresar";
@@ -138,12 +141,13 @@
             // 
             // btnAceptar
             // 
-            btnAceptar.BackColor = Color.FromArgb(192, 192, 255);
+            btnAceptar.BackColor = Color.FromArgb(192, 255, 255);
             btnAceptar.Cursor = Cursors.Hand;
             btnAceptar.Enabled = false;
-            btnAceptar.Location = new Point(333, 402);
+            btnAceptar.Location = new Point(381, 536);
+            btnAceptar.Margin = new Padding(3, 4, 3, 4);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(102, 29);
+            btnAceptar.Size = new Size(117, 39);
             btnAceptar.TabIndex = 9;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = false;
@@ -153,9 +157,10 @@
             // 
             btnCancelar.BackColor = Color.FromArgb(255, 192, 192);
             btnCancelar.Cursor = Cursors.Hand;
-            btnCancelar.Location = new Point(174, 402);
+            btnCancelar.Location = new Point(199, 536);
+            btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(104, 29);
+            btnCancelar.Size = new Size(119, 39);
             btnCancelar.TabIndex = 10;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
@@ -165,9 +170,9 @@
             // 
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNombre.Location = new Point(115, 135);
+            lblNombre.Location = new Point(131, 180);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(53, 15);
+            lblNombre.Size = new Size(67, 20);
             lblNombre.TabIndex = 0;
             lblNombre.Text = "Nombre";
             // 
@@ -175,27 +180,29 @@
             // 
             lblApellido.AutoSize = true;
             lblApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblApellido.Location = new Point(116, 179);
+            lblApellido.Location = new Point(133, 239);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(52, 15);
+            lblApellido.Size = new Size(67, 20);
             lblApellido.TabIndex = 0;
             lblApellido.Text = "Apellido";
             // 
             // txtNombre
             // 
             txtNombre.Cursor = Cursors.IBeam;
-            txtNombre.Location = new Point(174, 132);
+            txtNombre.Location = new Point(199, 176);
+            txtNombre.Margin = new Padding(3, 4, 3, 4);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(261, 23);
+            txtNombre.Size = new Size(298, 27);
             txtNombre.TabIndex = 4;
             txtNombre.Leave += txtNombre_Leave;
             // 
             // txtApellido
             // 
             txtApellido.Cursor = Cursors.IBeam;
-            txtApellido.Location = new Point(174, 179);
+            txtApellido.Location = new Point(199, 239);
+            txtApellido.Margin = new Padding(3, 4, 3, 4);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(261, 23);
+            txtApellido.Size = new Size(298, 27);
             txtApellido.TabIndex = 4;
             txtApellido.Leave += txtApellido_Leave;
             // 
@@ -203,9 +210,9 @@
             // 
             lblValidar.AutoSize = true;
             lblValidar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblValidar.Location = new Point(174, 361);
+            lblValidar.Location = new Point(199, 481);
             lblValidar.Name = "lblValidar";
-            lblValidar.Size = new Size(72, 20);
+            lblValidar.Size = new Size(91, 25);
             lblValidar.TabIndex = 11;
             lblValidar.Text = "validador";
             lblValidar.Visible = false;
@@ -213,9 +220,10 @@
             // txtDNI
             // 
             txtDNI.Cursor = Cursors.IBeam;
-            txtDNI.Location = new Point(174, 88);
+            txtDNI.Location = new Point(199, 117);
+            txtDNI.Margin = new Padding(3, 4, 3, 4);
             txtDNI.Name = "txtDNI";
-            txtDNI.Size = new Size(261, 23);
+            txtDNI.Size = new Size(298, 27);
             txtDNI.TabIndex = 1;
             txtDNI.Leave += txtDNI_Leave;
             // 
@@ -223,17 +231,17 @@
             // 
             lblDNI.AutoSize = true;
             lblDNI.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDNI.Location = new Point(138, 91);
+            lblDNI.Location = new Point(158, 121);
             lblDNI.Name = "lblDNI";
-            lblDNI.Size = new Size(29, 15);
+            lblDNI.Size = new Size(37, 20);
             lblDNI.TabIndex = 12;
             lblDNI.Text = "DNI";
             // 
-            // formRegistro
+            // formAddSocio
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(606, 487);
+            ClientSize = new Size(693, 649);
             Controls.Add(txtDNI);
             Controls.Add(lblDNI);
             Controls.Add(lblValidar);
@@ -252,7 +260,8 @@
             Controls.Add(lblApellido);
             Controls.Add(lblNombre);
             Controls.Add(lblMail);
-            Name = "formRegistro";
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "formAddSocio";
             Text = "Registro";
             ResumeLayout(false);
             PerformLayout();

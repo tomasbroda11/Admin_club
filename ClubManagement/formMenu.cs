@@ -52,7 +52,7 @@ namespace ClubManagement
         private void btn_menu_misDatos_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formEditMisDatos formMisDatos= new formEditMisDatos(this.persona);
+            formEditMisDatos formMisDatos = new formEditMisDatos(this.persona);
             formMisDatos.ShowDialog();
             this.Close();
         }

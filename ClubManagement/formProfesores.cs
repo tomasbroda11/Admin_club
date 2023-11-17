@@ -54,6 +54,11 @@ namespace ClubManagement
         {
             if (txtDni.Text.Length > 0)
             {
+                if (!int.TryParse(txtDni.Text, out int id))
+                {
+                    MessageBox.Show("El DNI debe ser un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
                 DialogResult result = MessageBox.Show("¿Quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -91,6 +96,11 @@ namespace ClubManagement
         {
             if (txtDni.Text.Length > 0)
             {
+                if (!int.TryParse(txtDni.Text, out int id))
+                {
+                    MessageBox.Show("El ID debe ser un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
                 ABMpersonas abmPersonas = new ABMpersonas();
                 Profesor profeExiste = abmPersonas.buscaProfeXDni(txtDni.Text);

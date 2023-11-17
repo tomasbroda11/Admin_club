@@ -63,6 +63,12 @@ namespace ClubManagement
                 return;
             }
 
+            if (!int.TryParse(txtIdInstalacion.Text, out int id))
+            {
+                MessageBox.Show("El ID debe ser un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             DialogResult result = MessageBox.Show("¿Quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
@@ -91,6 +97,12 @@ namespace ClubManagement
             if (txtIdInstalacion.Text.Length == 0)
             {
                 MessageBox.Show("Ingrese un ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(txtIdInstalacion.Text, out int id))
+            {
+                MessageBox.Show("El ID debe ser un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             ABMInstalaciones abmInstalaciones = new ABMInstalaciones();

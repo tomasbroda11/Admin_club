@@ -48,9 +48,10 @@
             // btnAgregarEntrenamiento
             // 
             btnAgregarEntrenamiento.BackColor = Color.FromArgb(192, 255, 192);
-            btnAgregarEntrenamiento.Location = new Point(681, 93);
+            btnAgregarEntrenamiento.Location = new Point(596, 70);
+            btnAgregarEntrenamiento.Margin = new Padding(3, 2, 3, 2);
             btnAgregarEntrenamiento.Name = "btnAgregarEntrenamiento";
-            btnAgregarEntrenamiento.Size = new Size(170, 48);
+            btnAgregarEntrenamiento.Size = new Size(149, 36);
             btnAgregarEntrenamiento.TabIndex = 16;
             btnAgregarEntrenamiento.Text = "Agregar Entrenamiento";
             btnAgregarEntrenamiento.UseVisualStyleBackColor = false;
@@ -59,9 +60,10 @@
             // btnEliminar
             // 
             btnEliminar.BackColor = Color.FromArgb(255, 192, 192);
-            btnEliminar.Location = new Point(743, 450);
+            btnEliminar.Location = new Point(663, 325);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(82, 27);
             btnEliminar.TabIndex = 14;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -70,26 +72,28 @@
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(441, 426);
+            lblId.Location = new Point(419, 310);
             lblId.Name = "lblId";
-            lblId.Size = new Size(126, 20);
+            lblId.Size = new Size(101, 15);
             lblId.TabIndex = 13;
             lblId.Text = "Id entrenamiento:";
             // 
             // txtId
             // 
-            txtId.Location = new Point(444, 448);
+            txtId.Location = new Point(419, 327);
+            txtId.Margin = new Padding(3, 2, 3, 2);
             txtId.Name = "txtId";
             txtId.PlaceholderText = "Ingrese ID";
-            txtId.Size = new Size(171, 27);
+            txtId.Size = new Size(150, 23);
             txtId.TabIndex = 12;
             // 
             // btnAtras
             // 
             btnAtras.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAtras.Location = new Point(21, 440);
+            btnAtras.Location = new Point(65, 318);
+            btnAtras.Margin = new Padding(3, 2, 3, 2);
             btnAtras.Name = "btnAtras";
-            btnAtras.Size = new Size(118, 45);
+            btnAtras.Size = new Size(103, 34);
             btnAtras.TabIndex = 11;
             btnAtras.Text = "Atras";
             btnAtras.UseVisualStyleBackColor = true;
@@ -100,12 +104,11 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, Dia, HoraDesde, HoraHasta, Actividad, Instalacion });
-            dataGridView1.Location = new Point(74, 148);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Location = new Point(65, 111);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(777, 203);
+            dataGridView1.Size = new Size(680, 152);
             dataGridView1.TabIndex = 10;
             // 
             // Id
@@ -154,28 +157,29 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitle.Location = new Point(290, 31);
+            lblTitle.Location = new Point(65, 32);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(372, 62);
+            lblTitle.Size = new Size(295, 50);
             lblTitle.TabIndex = 9;
             lblTitle.Text = "Entrenamientos";
             // 
             // btnActualizar
             // 
             btnActualizar.BackColor = Color.FromArgb(192, 255, 255);
-            btnActualizar.Location = new Point(638, 450);
+            btnActualizar.Location = new Point(575, 325);
+            btnActualizar.Margin = new Padding(3, 2, 3, 2);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(94, 29);
+            btnActualizar.Size = new Size(82, 27);
             btnActualizar.TabIndex = 14;
-            btnActualizar.Text = "Actualizar";
+            btnActualizar.Text = "Modificar";
             btnActualizar.UseVisualStyleBackColor = false;
             btnActualizar.Click += btnActualizar_Click;
             // 
             // formEntrenamientos
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 536);
+            ClientSize = new Size(800, 402);
             Controls.Add(btnAgregarEntrenamiento);
             Controls.Add(btnActualizar);
             Controls.Add(btnEliminar);
@@ -184,7 +188,6 @@
             Controls.Add(btnAtras);
             Controls.Add(dataGridView1);
             Controls.Add(lblTitle);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "formEntrenamientos";
             Text = "formEntrenamientos";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

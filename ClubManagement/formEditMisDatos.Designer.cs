@@ -44,9 +44,10 @@
             // btnAcpetar
             // 
             btnAcpetar.BackColor = Color.FromArgb(192, 255, 255);
-            btnAcpetar.Location = new Point(487, 394);
+            btnAcpetar.Location = new Point(312, 294);
+            btnAcpetar.Margin = new Padding(3, 2, 3, 2);
             btnAcpetar.Name = "btnAcpetar";
-            btnAcpetar.Size = new Size(96, 44);
+            btnAcpetar.Size = new Size(84, 33);
             btnAcpetar.TabIndex = 38;
             btnAcpetar.Text = "Modificar";
             btnAcpetar.UseVisualStyleBackColor = false;
@@ -55,9 +56,10 @@
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.FromArgb(255, 192, 192);
-            btnCancelar.Location = new Point(285, 394);
+            btnCancelar.Location = new Point(135, 294);
+            btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(96, 44);
+            btnCancelar.Size = new Size(84, 33);
             btnCancelar.TabIndex = 37;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
@@ -67,9 +69,9 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitle.Location = new Point(327, 26);
+            lblTitle.Location = new Point(186, 9);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(194, 50);
+            lblTitle.Size = new Size(153, 40);
             lblTitle.TabIndex = 36;
             lblTitle.Text = "Mis Datos";
             // 
@@ -78,56 +80,52 @@
             txtDNI.BackColor = SystemColors.InactiveCaption;
             txtDNI.Cursor = Cursors.IBeam;
             txtDNI.Enabled = false;
-            txtDNI.Location = new Point(285, 117);
-            txtDNI.Margin = new Padding(3, 4, 3, 4);
+            txtDNI.Location = new Point(135, 86);
             txtDNI.Name = "txtDNI";
-            txtDNI.Size = new Size(298, 27);
+            txtDNI.Size = new Size(261, 23);
             txtDNI.TabIndex = 31;
             // 
             // lblDNI
             // 
             lblDNI.AutoSize = true;
             lblDNI.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDNI.Location = new Point(244, 121);
+            lblDNI.Location = new Point(100, 89);
             lblDNI.Name = "lblDNI";
-            lblDNI.Size = new Size(37, 20);
+            lblDNI.Size = new Size(29, 15);
             lblDNI.TabIndex = 35;
             lblDNI.Text = "DNI";
             // 
             // txtNombre
             // 
             txtNombre.Cursor = Cursors.IBeam;
-            txtNombre.Location = new Point(285, 176);
-            txtNombre.Margin = new Padding(3, 4, 3, 4);
+            txtNombre.Location = new Point(135, 130);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(298, 27);
+            txtNombre.Size = new Size(261, 23);
             txtNombre.TabIndex = 32;
             // 
             // txtApellido
             // 
             txtApellido.Cursor = Cursors.IBeam;
-            txtApellido.Location = new Point(285, 239);
-            txtApellido.Margin = new Padding(3, 4, 3, 4);
+            txtApellido.Location = new Point(135, 177);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(298, 27);
+            txtApellido.Size = new Size(261, 23);
             txtApellido.TabIndex = 33;
             // 
             // txtMail
             // 
             txtMail.Cursor = Cursors.IBeam;
-            txtMail.Location = new Point(285, 293);
-            txtMail.Margin = new Padding(3, 4, 3, 4);
+            txtMail.Location = new Point(135, 218);
             txtMail.Name = "txtMail";
-            txtMail.Size = new Size(298, 27);
+            txtMail.Size = new Size(261, 23);
             txtMail.TabIndex = 34;
             // 
             // lblApellido
             // 
             lblApellido.AutoSize = true;
             lblApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblApellido.Location = new Point(219, 239);
+            lblApellido.Location = new Point(78, 177);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(67, 20);
+            lblApellido.Size = new Size(52, 15);
             lblApellido.TabIndex = 28;
             lblApellido.Text = "Apellido";
             // 
@@ -135,9 +133,9 @@
             // 
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNombre.Location = new Point(217, 180);
+            lblNombre.Location = new Point(76, 133);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(67, 20);
+            lblNombre.Size = new Size(53, 15);
             lblNombre.TabIndex = 29;
             lblNombre.Text = "Nombre";
             // 
@@ -145,17 +143,17 @@
             // 
             lblMail.AutoSize = true;
             lblMail.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMail.Location = new Point(244, 297);
+            lblMail.Location = new Point(100, 221);
             lblMail.Name = "lblMail";
-            lblMail.Size = new Size(39, 20);
+            lblMail.Size = new Size(30, 15);
             lblMail.TabIndex = 30;
             lblMail.Text = "Mail";
             // 
             // formEditMisDatos
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(524, 354);
             Controls.Add(btnAcpetar);
             Controls.Add(btnCancelar);
             Controls.Add(lblTitle);
@@ -167,6 +165,7 @@
             Controls.Add(lblApellido);
             Controls.Add(lblNombre);
             Controls.Add(lblMail);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "formEditMisDatos";
             Text = "Editar Datos";
             ResumeLayout(false);

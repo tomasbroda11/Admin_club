@@ -45,24 +45,25 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(300, 24);
+            lblTitulo.Location = new Point(211, 18);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(232, 38);
+            lblTitulo.Size = new Size(185, 30);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Agregar Reserva";
             // 
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(9, 166);
+            lblFecha.Location = new Point(58, 167);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(123, 20);
+            lblFecha.Size = new Size(98, 15);
             lblFecha.TabIndex = 1;
             lblFecha.Text = "Seleccione fecha:";
             // 
             // calendar
             // 
-            calendar.Location = new Point(9, 195);
+            calendar.Location = new Point(58, 189);
+            calendar.Margin = new Padding(8, 7, 8, 7);
             calendar.MinDate = new DateTime(2023, 11, 9, 22, 5, 33, 0);
             calendar.Name = "calendar";
             calendar.TabIndex = 3;
@@ -70,18 +71,18 @@
             // lblHorario
             // 
             lblHorario.AutoSize = true;
-            lblHorario.Location = new Point(402, 166);
+            lblHorario.Location = new Point(342, 167);
             lblHorario.Name = "lblHorario";
-            lblHorario.Size = new Size(135, 20);
+            lblHorario.Size = new Size(107, 15);
             lblHorario.TabIndex = 4;
             lblHorario.Text = "Seleccione horario:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(9, 84);
+            label1.Location = new Point(67, 78);
             label1.Name = "label1";
-            label1.Size = new Size(148, 20);
+            label1.Size = new Size(117, 15);
             label1.TabIndex = 5;
             label1.Text = "Seleccione actividad:";
             // 
@@ -89,45 +90,49 @@
             // 
             cbActividad.FormattingEnabled = true;
             cbActividad.Items.AddRange(new object[] { "Natación", "Fútbol", "Tenis", "Yoga", "Baloncesto", "Voleibol", "Hockey", "Rugby" });
-            cbActividad.Location = new Point(173, 81);
+            cbActividad.Location = new Point(190, 75);
+            cbActividad.Margin = new Padding(3, 2, 3, 2);
             cbActividad.Name = "cbActividad";
-            cbActividad.Size = new Size(253, 28);
+            cbActividad.Size = new Size(302, 23);
             cbActividad.TabIndex = 6;
             cbActividad.SelectedValueChanged += cbActividad_SelectedValueChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(9, 127);
+            label2.Location = new Point(58, 120);
             label2.Name = "label2";
-            label2.Size = new Size(158, 20);
+            label2.Size = new Size(126, 15);
             label2.TabIndex = 7;
             label2.Text = "Seleccione instalacion:";
             // 
             // cbIntalacion
             // 
             cbIntalacion.FormattingEnabled = true;
-            cbIntalacion.Location = new Point(173, 124);
+            cbIntalacion.Location = new Point(190, 117);
+            cbIntalacion.Margin = new Padding(3, 2, 3, 2);
             cbIntalacion.Name = "cbIntalacion";
-            cbIntalacion.Size = new Size(253, 28);
+            cbIntalacion.Size = new Size(302, 23);
             cbIntalacion.TabIndex = 8;
             // 
             // cbHorario
             // 
             cbHorario.FormattingEnabled = true;
-            cbHorario.Location = new Point(402, 195);
+            cbHorario.Location = new Point(342, 189);
+            cbHorario.Margin = new Padding(3, 2, 3, 2);
             cbHorario.Name = "cbHorario";
-            cbHorario.Size = new Size(231, 28);
+            cbHorario.Size = new Size(150, 23);
             cbHorario.TabIndex = 9;
             cbHorario.Click += cbHorario_Click;
             // 
             // btnAceptar
             // 
             btnAceptar.BackColor = Color.FromArgb(192, 255, 255);
-            btnAceptar.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAceptar.Location = new Point(692, 454);
+            btnAceptar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAceptar.Location = new Point(384, 375);
+            btnAceptar.Margin = new Padding(3, 2, 3, 2);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(123, 54);
+            btnAceptar.Size = new Size(108, 40);
             btnAceptar.TabIndex = 10;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = false;
@@ -135,20 +140,21 @@
             // 
             // btnAtras
             // 
-            btnAtras.BackColor = Color.FromArgb(255, 192, 192);
-            btnAtras.Location = new Point(402, 454);
+            btnAtras.BackColor = SystemColors.ControlLightLight;
+            btnAtras.Location = new Point(58, 375);
+            btnAtras.Margin = new Padding(3, 2, 3, 2);
             btnAtras.Name = "btnAtras";
-            btnAtras.Size = new Size(123, 54);
+            btnAtras.Size = new Size(108, 40);
             btnAtras.TabIndex = 11;
-            btnAtras.Text = "Cancelar";
+            btnAtras.Text = "Atras";
             btnAtras.UseVisualStyleBackColor = false;
             btnAtras.Click += btnAtras_Click;
             // 
             // formReservar
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(849, 534);
+            ClientSize = new Size(620, 440);
             Controls.Add(btnAtras);
             Controls.Add(btnAceptar);
             Controls.Add(cbHorario);
@@ -160,6 +166,7 @@
             Controls.Add(calendar);
             Controls.Add(lblFecha);
             Controls.Add(lblTitulo);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "formReservar";
             Text = "Reservar";
             Load += formReservar_Load;

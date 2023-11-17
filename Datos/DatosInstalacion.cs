@@ -160,16 +160,17 @@ namespace Datos
                 connection = Conexion.openConection();
 
                 // Consulta SQL para buscar la persona por DNI y contraseña
-                string query = "INSERT INTO instalaciones VALUES (@Id, @Descripcion, @Activo, @IdActividad)";
+                string query = "INSERT INTO instalaciones VALUES (@Id, @Descripcion,  @IdActividad, @Activo)";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Id", instalacion.getId());
                     command.Parameters.AddWithValue("@Descripcion", instalacion.getDescripcion());
-                    command.Parameters.AddWithValue("@Activo", instalacion.getActivo());
                     command.Parameters.AddWithValue("@IdActividad", instalacion.Actividad.getId());                    
+                    command.Parameters.AddWithValue("@Activo", instalacion.getActivo());
 
                     int rowsAffected = command.ExecuteNonQuery();
+                    System.Diagnostics.Debug.WriteLine(rowsAffected);
                     return rowsAffected;
                 }                
             }

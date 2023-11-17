@@ -55,9 +55,9 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(409, 12);
+            lblTitulo.Location = new Point(22, 29);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(107, 41);
+            lblTitulo.Size = new Size(87, 32);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Socios";
             // 
@@ -66,12 +66,11 @@
             dataSocios.AllowUserToOrderColumns = true;
             dataSocios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataSocios.Columns.AddRange(new DataGridViewColumn[] { Dni, Nombre, Apellido, Email, CuotasAsignadas, Debe, Monto });
-            dataSocios.Location = new Point(25, 84);
-            dataSocios.Margin = new Padding(3, 4, 3, 4);
+            dataSocios.Location = new Point(22, 93);
             dataSocios.Name = "dataSocios";
             dataSocios.RowHeadersWidth = 51;
             dataSocios.RowTemplate.Height = 25;
-            dataSocios.Size = new Size(875, 312);
+            dataSocios.Size = new Size(766, 234);
             dataSocios.TabIndex = 1;
             // 
             // Dni
@@ -133,9 +132,10 @@
             // 
             // btnAtras
             // 
-            btnAtras.Location = new Point(25, 428);
+            btnAtras.Location = new Point(22, 347);
+            btnAtras.Margin = new Padding(3, 2, 3, 2);
             btnAtras.Name = "btnAtras";
-            btnAtras.Size = new Size(95, 40);
+            btnAtras.Size = new Size(83, 30);
             btnAtras.TabIndex = 2;
             btnAtras.Text = "Atras";
             btnAtras.UseVisualStyleBackColor = true;
@@ -143,28 +143,31 @@
             // 
             // txtDni
             // 
-            txtDni.Location = new Point(577, 435);
+            txtDni.Location = new Point(506, 350);
+            txtDni.Margin = new Padding(3, 2, 3, 2);
             txtDni.Name = "txtDni";
-            txtDni.Size = new Size(121, 27);
+            txtDni.Size = new Size(106, 23);
             txtDni.TabIndex = 3;
             // 
             // btnActualiza
             // 
             btnActualiza.BackColor = Color.FromArgb(192, 255, 255);
-            btnActualiza.Location = new Point(705, 431);
+            btnActualiza.Location = new Point(618, 347);
+            btnActualiza.Margin = new Padding(3, 2, 3, 2);
             btnActualiza.Name = "btnActualiza";
-            btnActualiza.Size = new Size(94, 40);
+            btnActualiza.Size = new Size(82, 30);
             btnActualiza.TabIndex = 4;
-            btnActualiza.Text = "Actualizar";
+            btnActualiza.Text = "Modificar";
             btnActualiza.UseVisualStyleBackColor = false;
             btnActualiza.Click += btnActualiza_Click;
             // 
             // btnEliminar
             // 
             btnEliminar.BackColor = Color.FromArgb(255, 192, 192);
-            btnEliminar.Location = new Point(806, 433);
+            btnEliminar.Location = new Point(706, 347);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 37);
+            btnEliminar.Size = new Size(82, 30);
             btnEliminar.TabIndex = 5;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -173,18 +176,19 @@
             // lblDni
             // 
             lblDni.AutoSize = true;
-            lblDni.Location = new Point(536, 442);
+            lblDni.Location = new Point(470, 356);
             lblDni.Name = "lblDni";
-            lblDni.Size = new Size(38, 20);
+            lblDni.Size = new Size(30, 15);
             lblDni.TabIndex = 6;
             lblDni.Text = "DNI:";
             // 
             // btnAgregar
             // 
             btnAgregar.BackColor = Color.FromArgb(192, 255, 192);
-            btnAgregar.Location = new Point(784, 37);
+            btnAgregar.Location = new Point(686, 58);
+            btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(116, 40);
+            btnAgregar.Size = new Size(102, 30);
             btnAgregar.TabIndex = 7;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
@@ -192,9 +196,9 @@
             // 
             // formSocios
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(927, 513);
+            ClientSize = new Size(811, 400);
             Controls.Add(btnAgregar);
             Controls.Add(lblDni);
             Controls.Add(btnEliminar);
@@ -203,7 +207,6 @@
             Controls.Add(btnAtras);
             Controls.Add(dataSocios);
             Controls.Add(lblTitulo);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "formSocios";
             Text = "formSocios";
             Load += formSocios_Load;

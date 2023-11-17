@@ -49,8 +49,6 @@ namespace ClubManagement
             cbDia.SelectedItem = dias[this.entrenamiento.Dia];
         }
 
-
-
         private static List<TimeOnly> ObtenerTodasLasHoras()
         {
             return new List<TimeOnly>
@@ -94,7 +92,10 @@ namespace ClubManagement
                     ent.Dia = dia;
                     ent.Instalacion = instalacion;
                     ent.Profesor = this.entrenamiento.Profesor;
+                    ent.IdEntrenamiento = this.entrenamiento.IdEntrenamiento;
+
                     abme.actualizarEntrenamiento(ent);
+
                     MessageBox.Show("Modificacion exitosa!");
                     this.Hide();
                     formEntrenamientos formEnt = new formEntrenamientos(this.profesor);

@@ -42,7 +42,6 @@
             txtId = new TextBox();
             lblId = new Label();
             btnCancelar = new Button();
-            label1 = new Label();
             btnReservar = new Button();
             ((System.ComponentModel.ISupportInitialize)reservaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)reservaBindingSource1).BeginInit();
@@ -53,9 +52,9 @@
             // 
             lblReservas.AutoSize = true;
             lblReservas.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblReservas.Location = new Point(342, 40);
+            lblReservas.Location = new Point(42, 23);
             lblReservas.Name = "lblReservas";
-            lblReservas.Size = new Size(219, 62);
+            lblReservas.Size = new Size(172, 50);
             lblReservas.TabIndex = 1;
             lblReservas.Text = "Reservas";
             // 
@@ -72,12 +71,11 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, Estado, fecha, instalacion, actividad });
-            dataGridView1.Location = new Point(125, 115);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Location = new Point(42, 96);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(692, 200);
+            dataGridView1.Size = new Size(560, 150);
             dataGridView1.TabIndex = 2;
             // 
             // Id
@@ -117,10 +115,11 @@
             // 
             // btnAtras
             // 
-            btnAtras.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAtras.Location = new Point(46, 405);
+            btnAtras.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAtras.Location = new Point(42, 293);
+            btnAtras.Margin = new Padding(3, 2, 3, 2);
             btnAtras.Name = "btnAtras";
-            btnAtras.Size = new Size(118, 46);
+            btnAtras.Size = new Size(91, 31);
             btnAtras.TabIndex = 3;
             btnAtras.Text = "Atras";
             btnAtras.UseVisualStyleBackColor = true;
@@ -128,46 +127,40 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(598, 365);
+            txtId.Location = new Point(451, 299);
+            txtId.Margin = new Padding(3, 2, 3, 2);
             txtId.Name = "txtId";
-            txtId.Size = new Size(171, 27);
+            txtId.Size = new Size(63, 23);
             txtId.TabIndex = 4;
             // 
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(519, 363);
+            lblId.Location = new Point(427, 304);
             lblId.Name = "lblId";
-            lblId.Size = new Size(73, 20);
+            lblId.Size = new Size(18, 15);
             lblId.TabIndex = 5;
-            lblId.Text = "Id reserva";
+            lblId.Text = "ID";
             // 
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.FromArgb(255, 192, 192);
-            btnCancelar.Location = new Point(775, 363);
+            btnCancelar.Location = new Point(520, 289);
+            btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(94, 29);
+            btnCancelar.Size = new Size(82, 40);
             btnCancelar.TabIndex = 6;
-            btnCancelar.Text = "Cancelar";
+            btnCancelar.Text = "Cancelar Reserva";
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(519, 332);
-            label1.Name = "label1";
-            label1.Size = new Size(126, 20);
-            label1.TabIndex = 7;
-            label1.Text = "Cancelar reservas:";
             // 
             // btnReservar
             // 
             btnReservar.BackColor = Color.FromArgb(192, 255, 192);
-            btnReservar.Location = new Point(743, 54);
+            btnReservar.Location = new Point(492, 40);
+            btnReservar.Margin = new Padding(3, 2, 3, 2);
             btnReservar.Name = "btnReservar";
-            btnReservar.Size = new Size(126, 48);
+            btnReservar.Size = new Size(110, 36);
             btnReservar.TabIndex = 8;
             btnReservar.Text = "Agregar Reserva";
             btnReservar.UseVisualStyleBackColor = false;
@@ -175,18 +168,16 @@
             // 
             // FormReservas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 518);
+            ClientSize = new Size(648, 354);
             Controls.Add(btnReservar);
-            Controls.Add(label1);
             Controls.Add(btnCancelar);
             Controls.Add(lblId);
             Controls.Add(txtId);
             Controls.Add(btnAtras);
             Controls.Add(dataGridView1);
             Controls.Add(lblReservas);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FormReservas";
             Text = "Reservas";
             Load += FormReservas_Load;
@@ -208,7 +199,6 @@
         private TextBox txtId;
         private Label lblId;
         private Button btnCancelar;
-        private Label label1;
         private Button btnReservar;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Estado;

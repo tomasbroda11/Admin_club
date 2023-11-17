@@ -60,12 +60,13 @@
             dataGridViewCuotas.AllowUserToOrderColumns = true;
             dataGridViewCuotas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCuotas.Columns.AddRange(new DataGridViewColumn[] { mes, anio, monto, pago });
-            dataGridViewCuotas.Location = new Point(77, 69);
+            dataGridViewCuotas.Location = new Point(67, 74);
+            dataGridViewCuotas.Margin = new Padding(3, 2, 3, 2);
             dataGridViewCuotas.Name = "dataGridViewCuotas";
             dataGridViewCuotas.ReadOnly = true;
             dataGridViewCuotas.RowHeadersWidth = 51;
             dataGridViewCuotas.RowTemplate.Height = 29;
-            dataGridViewCuotas.Size = new Size(560, 260);
+            dataGridViewCuotas.Size = new Size(490, 195);
             dataGridViewCuotas.TabIndex = 0;
             dataGridViewCuotas.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -116,18 +117,20 @@
             // lblDeuda
             // 
             lblDeuda.AutoSize = true;
-            lblDeuda.Location = new Point(77, 365);
+            lblDeuda.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDeuda.Location = new Point(67, 297);
             lblDeuda.Name = "lblDeuda";
-            lblDeuda.Size = new Size(146, 20);
+            lblDeuda.Size = new Size(135, 17);
             lblDeuda.TabIndex = 1;
             lblDeuda.Text = "Monto total a pagar:";
             // 
             // lblMontoDeuda
             // 
             lblMontoDeuda.AutoSize = true;
-            lblMontoDeuda.Location = new Point(219, 365);
+            lblMontoDeuda.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMontoDeuda.Location = new Point(213, 299);
             lblMontoDeuda.Name = "lblMontoDeuda";
-            lblMontoDeuda.Size = new Size(53, 20);
+            lblMontoDeuda.Size = new Size(46, 17);
             lblMontoDeuda.TabIndex = 2;
             lblMontoDeuda.Text = "monto";
             lblMontoDeuda.Visible = false;
@@ -135,11 +138,12 @@
             // 
             // btnAtras
             // 
-            btnAtras.BackColor = Color.FromArgb(255, 192, 192);
-            btnAtras.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAtras.Location = new Point(11, 395);
+            btnAtras.BackColor = SystemColors.ControlLightLight;
+            btnAtras.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAtras.Location = new Point(67, 339);
+            btnAtras.Margin = new Padding(3, 2, 3, 2);
             btnAtras.Name = "btnAtras";
-            btnAtras.Size = new Size(104, 43);
+            btnAtras.Size = new Size(91, 32);
             btnAtras.TabIndex = 3;
             btnAtras.Text = "Atras";
             btnAtras.UseVisualStyleBackColor = false;
@@ -149,9 +153,9 @@
             // 
             lblCuotas.AutoSize = true;
             lblCuotas.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCuotas.Location = new Point(293, 0);
+            lblCuotas.Location = new Point(243, 9);
             lblCuotas.Name = "lblCuotas";
-            lblCuotas.Size = new Size(177, 62);
+            lblCuotas.Size = new Size(140, 50);
             lblCuotas.TabIndex = 4;
             lblCuotas.Text = "Cuotas";
             // 
@@ -159,9 +163,10 @@
             // 
             cbAnio.FormattingEnabled = true;
             cbAnio.Items.AddRange(new object[] { "", "2023", "2022", "2021", "2020" });
-            cbAnio.Location = new Point(618, 357);
+            cbAnio.Location = new Point(448, 297);
+            cbAnio.Margin = new Padding(3, 2, 3, 2);
             cbAnio.Name = "cbAnio";
-            cbAnio.Size = new Size(151, 28);
+            cbAnio.Size = new Size(109, 23);
             cbAnio.TabIndex = 5;
             cbAnio.SelectedIndexChanged += cbAnio_SelectedIndexChanged;
             cbAnio.Click += cbAnio_Click;
@@ -169,17 +174,18 @@
             // lblFiltro
             // 
             lblFiltro.AutoSize = true;
-            lblFiltro.Location = new Point(506, 360);
+            lblFiltro.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFiltro.Location = new Point(347, 299);
             lblFiltro.Name = "lblFiltro";
-            lblFiltro.Size = new Size(106, 20);
+            lblFiltro.Size = new Size(95, 17);
             lblFiltro.TabIndex = 6;
             lblFiltro.Text = "Filtrar por año:";
             // 
             // FormCuotas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 451);
+            ClientSize = new Size(660, 391);
             Controls.Add(lblFiltro);
             Controls.Add(cbAnio);
             Controls.Add(lblCuotas);
@@ -187,6 +193,7 @@
             Controls.Add(lblMontoDeuda);
             Controls.Add(lblDeuda);
             Controls.Add(dataGridViewCuotas);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormCuotas";
             Text = "Cuotas";
             ((System.ComponentModel.ISupportInitialize)reservaBindingSource).EndInit();

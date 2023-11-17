@@ -61,6 +61,12 @@ namespace ClubManagement
                 return;
             }
 
+            if (!int.TryParse(txtDni.Text, out int id))
+            {
+                MessageBox.Show("El DNI debe ser un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             DialogResult result = MessageBox.Show("¿Quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
@@ -87,6 +93,12 @@ namespace ClubManagement
             if (txtDni.Text.Length == 0)
             {
                 MessageBox.Show("Ingrese un DNI.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(txtDni.Text, out int id))
+            {
+                MessageBox.Show("El ID debe ser un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

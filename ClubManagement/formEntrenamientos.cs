@@ -42,10 +42,6 @@ namespace ClubManagement
                 column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             }
-
-
-
-
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -55,8 +51,6 @@ namespace ClubManagement
             formMenuProf.Show();
             this.Close();
         }
-
-
 
         private void btnAgregarEntrenamiento_Click(object sender, EventArgs e)
         {
@@ -97,7 +91,6 @@ namespace ClubManagement
             {
                 ABMEntrenamiento abme = new ABMEntrenamiento();
                 Entrenamiento ent = abme.obtenerEntrenamientoXId(int.Parse(txtId.Text));
-
 
                 if (ent != null && ent.Profesor.getDni() == this.profesor.getDni())
                 {
